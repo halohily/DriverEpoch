@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DrivingTopView.h"
 
 @interface DrivingViewController : UIViewController
+
+@property (nonatomic, weak) DrivingTopView *topView;
 
 @end

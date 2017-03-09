@@ -7,9 +7,9 @@
 //
 
 #import "DrivingViewController.h"
-#import "DrivingTopView.h"
 
-@interface DrivingViewController ()
+
+@interface DrivingViewController ()<DrivingTopViewDelegate>
 
 @end
 
@@ -25,11 +25,18 @@
 - (void)setupView
 {
     self.view.backgroundColor = [UIColor whiteColor];
-    DrivingTopView *topView = [[DrivingTopView alloc] initWithFrame:CGRectMake(0, 64, DEAppWidth, 50)];
-    [self.view addSubview:topView];
+    DrivingTopView *topview = [[DrivingTopView alloc] initWithFrame:CGRectMake(0, 0, DEAppWidth, 100)];
+    [self.view addSubview:topview];
+    topview.delegate = self;
+    
+    self.topView = topview;
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = YES;
+}
 
 
 
@@ -40,6 +47,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) reLocateBtnClick
+{
+    self.topView.locationLabel.text = @"s";
+    NSLog(@"222");
+}
 /*
 #pragma mark - Navigation
 
