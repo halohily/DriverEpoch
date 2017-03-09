@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DEViewController.h
 //  DriverEpoch
 //
 //  Created by halohily on 2017/3/9.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface DEViewController : UIViewController
 
 @end
-

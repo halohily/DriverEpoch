@@ -1,0 +1,22 @@
+//
+//  PrefixHeader.pch
+//  DriverEpoch
+//
+//  Created by halohily on 2017/3/9.
+//  Copyright © 2017年 http://halohily.com. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define DEColor(r, g, b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1]
+
+#define DEAppWidth ([UIScreen mainScreen].bounds.size.width)
+#define DEAppHeight ([UIScreen mainScreen].bounds.size.height)
+
+#define DENavBarColorBlack [UIColor colorWithRed:35/255.0f green:40/255.0f blue:46/255.0f alpha:1]
+#define DENavBarColorBlue [UIColor colorWithRed:40/255.0f green:158/255.0f blue:252/255.0f alpha:1]
+#endif /* PrefixHeader_pch */

@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		4E10ABBC1E71339F00BCF21B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABBB1E71339F00BCF21B /* main.m */; };
 		4E10ABBF1E71339F00BCF21B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABBE1E71339F00BCF21B /* AppDelegate.m */; };
-		4E10ABC21E71339F00BCF21B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABC11E71339F00BCF21B /* ViewController.m */; };
-		4E10ABC51E71339F00BCF21B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E10ABC31E71339F00BCF21B /* Main.storyboard */; };
 		4E10ABC71E71339F00BCF21B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E10ABC61E71339F00BCF21B /* Assets.xcassets */; };
 		4E10ABCA1E71339F00BCF21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E10ABC81E71339F00BCF21B /* LaunchScreen.storyboard */; };
 		4E10ABD51E71339F00BCF21B /* DriverEpochTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABD41E71339F00BCF21B /* DriverEpochTests.m */; };
 		4E10ABE01E71339F00BCF21B /* DriverEpochUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABDF1E71339F00BCF21B /* DriverEpochUITests.m */; };
+		4E10ABEF1E713DE700BCF21B /* DETabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABEE1E713DE700BCF21B /* DETabBarController.m */; };
+		4E10ABF31E713E7300BCF21B /* DENavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABF21E713E7300BCF21B /* DENavigationController.m */; };
+		4E10ABF61E7143C200BCF21B /* DEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABF51E7143C200BCF21B /* DEViewController.m */; };
+		4E10ABFD1E71457C00BCF21B /* DrivingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABFC1E71457C00BCF21B /* DrivingViewController.m */; };
+		4E10AC001E71458D00BCF21B /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABFF1E71458D00BCF21B /* InfoViewController.m */; };
+		4E10AC031E71459900BCF21B /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10AC021E71459900BCF21B /* MeViewController.m */; };
+		4E10AC071E71569400BCF21B /* DrivingTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10AC061E71569400BCF21B /* DrivingTopView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +44,6 @@
 		4E10ABBB1E71339F00BCF21B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E10ABBD1E71339F00BCF21B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E10ABBE1E71339F00BCF21B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4E10ABC01E71339F00BCF21B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4E10ABC11E71339F00BCF21B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		4E10ABC41E71339F00BCF21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E10ABC61E71339F00BCF21B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E10ABC91E71339F00BCF21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E10ABCB1E71339F00BCF21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +53,21 @@
 		4E10ABDB1E71339F00BCF21B /* DriverEpochUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriverEpochUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E10ABDF1E71339F00BCF21B /* DriverEpochUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DriverEpochUITests.m; sourceTree = "<group>"; };
 		4E10ABE11E71339F00BCF21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E10ABED1E713DE700BCF21B /* DETabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DETabBarController.h; sourceTree = "<group>"; };
+		4E10ABEE1E713DE700BCF21B /* DETabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DETabBarController.m; sourceTree = "<group>"; };
+		4E10ABF11E713E7300BCF21B /* DENavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DENavigationController.h; sourceTree = "<group>"; };
+		4E10ABF21E713E7300BCF21B /* DENavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DENavigationController.m; sourceTree = "<group>"; };
+		4E10ABF41E7143C200BCF21B /* DEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEViewController.h; sourceTree = "<group>"; };
+		4E10ABF51E7143C200BCF21B /* DEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEViewController.m; sourceTree = "<group>"; };
+		4E10ABFB1E71457C00BCF21B /* DrivingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrivingViewController.h; sourceTree = "<group>"; };
+		4E10ABFC1E71457C00BCF21B /* DrivingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrivingViewController.m; sourceTree = "<group>"; };
+		4E10ABFE1E71458D00BCF21B /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		4E10ABFF1E71458D00BCF21B /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		4E10AC011E71459900BCF21B /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		4E10AC021E71459900BCF21B /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		4E10AC041E714FA700BCF21B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		4E10AC051E71569400BCF21B /* DrivingTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrivingTopView.h; sourceTree = "<group>"; };
+		4E10AC061E71569400BCF21B /* DrivingTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrivingTopView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +118,10 @@
 		4E10ABB91E71339F00BCF21B /* DriverEpoch */ = {
 			isa = PBXGroup;
 			children = (
-				4E10ABBD1E71339F00BCF21B /* AppDelegate.h */,
-				4E10ABBE1E71339F00BCF21B /* AppDelegate.m */,
-				4E10ABC01E71339F00BCF21B /* ViewController.h */,
-				4E10ABC11E71339F00BCF21B /* ViewController.m */,
-				4E10ABC31E71339F00BCF21B /* Main.storyboard */,
+				4E10ABF01E713E0200BCF21B /* Main */,
+				4E10ABF81E71450500BCF21B /* Driving */,
+				4E10ABF91E71452700BCF21B /* Information */,
+				4E10ABFA1E71454400BCF21B /* Me */,
 				4E10ABC61E71339F00BCF21B /* Assets.xcassets */,
 				4E10ABC81E71339F00BCF21B /* LaunchScreen.storyboard */,
 				4E10ABCB1E71339F00BCF21B /* Info.plist */,
@@ -118,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				4E10ABBB1E71339F00BCF21B /* main.m */,
+				4E10AC041E714FA700BCF21B /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -138,6 +155,50 @@
 				4E10ABE11E71339F00BCF21B /* Info.plist */,
 			);
 			path = DriverEpochUITests;
+			sourceTree = "<group>";
+		};
+		4E10ABF01E713E0200BCF21B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4E10ABF41E7143C200BCF21B /* DEViewController.h */,
+				4E10ABF51E7143C200BCF21B /* DEViewController.m */,
+				4E10ABF11E713E7300BCF21B /* DENavigationController.h */,
+				4E10ABF21E713E7300BCF21B /* DENavigationController.m */,
+				4E10ABED1E713DE700BCF21B /* DETabBarController.h */,
+				4E10ABEE1E713DE700BCF21B /* DETabBarController.m */,
+				4E10ABBD1E71339F00BCF21B /* AppDelegate.h */,
+				4E10ABBE1E71339F00BCF21B /* AppDelegate.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		4E10ABF81E71450500BCF21B /* Driving */ = {
+			isa = PBXGroup;
+			children = (
+				4E10ABFB1E71457C00BCF21B /* DrivingViewController.h */,
+				4E10ABFC1E71457C00BCF21B /* DrivingViewController.m */,
+				4E10AC051E71569400BCF21B /* DrivingTopView.h */,
+				4E10AC061E71569400BCF21B /* DrivingTopView.m */,
+			);
+			name = Driving;
+			sourceTree = "<group>";
+		};
+		4E10ABF91E71452700BCF21B /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				4E10ABFE1E71458D00BCF21B /* InfoViewController.h */,
+				4E10ABFF1E71458D00BCF21B /* InfoViewController.m */,
+			);
+			name = Information;
+			sourceTree = "<group>";
+		};
+		4E10ABFA1E71454400BCF21B /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				4E10AC011E71459900BCF21B /* MeViewController.h */,
+				4E10AC021E71459900BCF21B /* MeViewController.m */,
+			);
+			name = Me;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,7 +312,6 @@
 			files = (
 				4E10ABCA1E71339F00BCF21B /* LaunchScreen.storyboard in Resources */,
 				4E10ABC71E71339F00BCF21B /* Assets.xcassets in Resources */,
-				4E10ABC51E71339F00BCF21B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,9 +336,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E10ABC21E71339F00BCF21B /* ViewController.m in Sources */,
+				4E10ABF31E713E7300BCF21B /* DENavigationController.m in Sources */,
 				4E10ABBF1E71339F00BCF21B /* AppDelegate.m in Sources */,
+				4E10ABEF1E713DE700BCF21B /* DETabBarController.m in Sources */,
+				4E10ABF61E7143C200BCF21B /* DEViewController.m in Sources */,
+				4E10ABFD1E71457C00BCF21B /* DrivingViewController.m in Sources */,
+				4E10AC001E71458D00BCF21B /* InfoViewController.m in Sources */,
+				4E10AC031E71459900BCF21B /* MeViewController.m in Sources */,
 				4E10ABBC1E71339F00BCF21B /* main.m in Sources */,
+				4E10AC071E71569400BCF21B /* DrivingTopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,14 +380,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4E10ABC31E71339F00BCF21B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4E10ABC41E71339F00BCF21B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4E10ABC81E71339F00BCF21B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -363,6 +421,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/qitmac000085/Desktop/DriverEpoch/DriverEpoch/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -409,6 +469,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/qitmac000085/Desktop/DriverEpoch/DriverEpoch/PrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
