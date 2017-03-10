@@ -7,10 +7,11 @@
 //
 
 #import "DrivingViewController.h"
-
+#import "LocationViewController.h"
 
 @interface DrivingViewController ()<DrivingTopViewDelegate>
 
+@property (nonatomic, weak) NSString *locationStr;
 @end
 
 @implementation DrivingViewController
@@ -28,7 +29,7 @@
     DrivingTopView *topview = [[DrivingTopView alloc] initWithFrame:CGRectMake(0, 0, DEAppWidth, 100)];
     [self.view addSubview:topview];
     topview.delegate = self;
-    
+    self.locationStr = topview.locationLabel.text;
     self.topView = topview;
     
 }
@@ -49,8 +50,12 @@
 
 - (void) reLocateBtnClick
 {
-    self.topView.locationLabel.text = @"s";
+//    self.topView.locationLabel.text = @"s";
     NSLog(@"222");
+    LocationViewController *locationView = [[LocationViewController alloc] init];
+    locationView.locationStr = self.locationStr;
+    [self presentViewController:locationView animated:YES completion:NULL];
+    
 }
 /*
 #pragma mark - Navigation

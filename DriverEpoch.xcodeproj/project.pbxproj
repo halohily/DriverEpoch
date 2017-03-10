@@ -20,6 +20,7 @@
 		4E10AC001E71458D00BCF21B /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABFF1E71458D00BCF21B /* InfoViewController.m */; };
 		4E10AC031E71459900BCF21B /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10AC021E71459900BCF21B /* MeViewController.m */; };
 		4E10AC071E71569400BCF21B /* DrivingTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10AC061E71569400BCF21B /* DrivingTopView.m */; };
+		4E10AC0A1E724CD900BCF21B /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10AC091E724CD900BCF21B /* LocationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		4E10AC041E714FA700BCF21B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4E10AC051E71569400BCF21B /* DrivingTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrivingTopView.h; sourceTree = "<group>"; };
 		4E10AC061E71569400BCF21B /* DrivingTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrivingTopView.m; sourceTree = "<group>"; };
+		4E10AC081E724CD900BCF21B /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		4E10AC091E724CD900BCF21B /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 				4E10ABFC1E71457C00BCF21B /* DrivingViewController.m */,
 				4E10AC051E71569400BCF21B /* DrivingTopView.h */,
 				4E10AC061E71569400BCF21B /* DrivingTopView.m */,
+				4E10AC081E724CD900BCF21B /* LocationViewController.h */,
+				4E10AC091E724CD900BCF21B /* LocationViewController.m */,
 			);
 			name = Driving;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				4E10AC031E71459900BCF21B /* MeViewController.m in Sources */,
 				4E10ABBC1E71339F00BCF21B /* main.m in Sources */,
 				4E10AC071E71569400BCF21B /* DrivingTopView.m in Sources */,
+				4E10AC0A1E724CD900BCF21B /* LocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +584,7 @@
 				4E10ABE61E71339F00BCF21B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E10ABE71E71339F00BCF21B /* Build configuration list for PBXNativeTarget "DriverEpochTests" */ = {
 			isa = XCConfigurationList;
@@ -586,6 +593,7 @@
 				4E10ABE91E71339F00BCF21B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E10ABEA1E71339F00BCF21B /* Build configuration list for PBXNativeTarget "DriverEpochUITests" */ = {
 			isa = XCConfigurationList;
@@ -594,6 +602,7 @@
 				4E10ABEC1E71339F00BCF21B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
