@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "DETabBarController.h"
-
+#import "DELoginViewController.h"
+#import "DENavigationController.h"
 @interface AppDelegate ()
 
 @end
@@ -22,7 +23,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[DETabBarController alloc] init];
     [self.window makeKeyAndVisible];
-
+    
+    DELoginViewController *login = [[DELoginViewController alloc] init];
+    DENavigationController *loginNav = [[DENavigationController alloc] initWithRootViewController:login];
+    loginNav.navigationBar.hidden = YES;
+    [self.window.rootViewController presentViewController:loginNav animated:YES completion:NULL];
+    
     return YES;
 }
 

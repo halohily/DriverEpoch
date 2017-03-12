@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08339E151E7560BA005DABBA /* DrivingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08339E141E7560BA005DABBA /* DrivingCollectionViewCell.m */; };
+		08FC692B1E7418CA00D79F18 /* DERegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FC692A1E7418CA00D79F18 /* DERegisterViewController.m */; };
+		08FC692E1E7418D800D79F18 /* DELoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FC692D1E7418D800D79F18 /* DELoginViewController.m */; };
+		09F4611397C2F1CC770233C0 /* libPods-DriverEpochTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDA66505F866C3547CF57DE /* libPods-DriverEpochTests.a */; };
+		2C9DEB39854B608DAD5129E5 /* libPods-DriverEpoch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC111A2859BC4CCDE198049 /* libPods-DriverEpoch.a */; };
+		403AEB6CD460B60714F2CBE7 /* libPods-DriverEpochUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F593E86677E27E44B108E5 /* libPods-DriverEpochUITests.a */; };
 		4E10ABBC1E71339F00BCF21B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABBB1E71339F00BCF21B /* main.m */; };
 		4E10ABBF1E71339F00BCF21B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABBE1E71339F00BCF21B /* AppDelegate.m */; };
 		4E10ABC71E71339F00BCF21B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E10ABC61E71339F00BCF21B /* Assets.xcassets */; };
@@ -41,6 +47,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07E84A4D0C8B24972A963A8B /* Pods-DriverEpochUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverEpochUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriverEpochUITests/Pods-DriverEpochUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		08339E131E7560BA005DABBA /* DrivingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrivingCollectionViewCell.h; sourceTree = "<group>"; };
+		08339E141E7560BA005DABBA /* DrivingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrivingCollectionViewCell.m; sourceTree = "<group>"; };
+		08FC69291E7418CA00D79F18 /* DERegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DERegisterViewController.h; sourceTree = "<group>"; };
+		08FC692A1E7418CA00D79F18 /* DERegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DERegisterViewController.m; sourceTree = "<group>"; };
+		08FC692C1E7418D800D79F18 /* DELoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DELoginViewController.h; sourceTree = "<group>"; };
+		08FC692D1E7418D800D79F18 /* DELoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DELoginViewController.m; sourceTree = "<group>"; };
+		2DC111A2859BC4CCDE198049 /* libPods-DriverEpoch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DriverEpoch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4346EAE266E0B06C72EE4F08 /* Pods-DriverEpochTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverEpochTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DriverEpochTests/Pods-DriverEpochTests.release.xcconfig"; sourceTree = "<group>"; };
 		4E10ABB71E71339F00BCF21B /* DriverEpoch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriverEpoch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E10ABBB1E71339F00BCF21B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E10ABBD1E71339F00BCF21B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,6 +86,12 @@
 		4E10AC061E71569400BCF21B /* DrivingTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrivingTopView.m; sourceTree = "<group>"; };
 		4E10AC081E724CD900BCF21B /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		4E10AC091E724CD900BCF21B /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		67F593E86677E27E44B108E5 /* libPods-DriverEpochUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DriverEpochUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		758D4F97A52E549ACB3B54A7 /* Pods-DriverEpochUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverEpochUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DriverEpochUITests/Pods-DriverEpochUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8CDA66505F866C3547CF57DE /* libPods-DriverEpochTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DriverEpochTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC505DE0BB4EB00E1664063D /* Pods-DriverEpoch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverEpoch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriverEpoch/Pods-DriverEpoch.debug.xcconfig"; sourceTree = "<group>"; };
+		C627575FC3CCEE6550CECB13 /* Pods-DriverEpoch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverEpoch.release.xcconfig"; path = "Pods/Target Support Files/Pods-DriverEpoch/Pods-DriverEpoch.release.xcconfig"; sourceTree = "<group>"; };
+		DB8598C64748D2810126E6F3 /* Pods-DriverEpochTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverEpochTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriverEpochTests/Pods-DriverEpochTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C9DEB39854B608DAD5129E5 /* libPods-DriverEpoch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F4611397C2F1CC770233C0 /* libPods-DriverEpochTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +115,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				403AEB6CD460B60714F2CBE7 /* libPods-DriverEpochUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08FC69281E74186B00D79F18 /* RegisterAndLogin */ = {
+			isa = PBXGroup;
+			children = (
+				08FC69291E7418CA00D79F18 /* DERegisterViewController.h */,
+				08FC692A1E7418CA00D79F18 /* DERegisterViewController.m */,
+				08FC692C1E7418D800D79F18 /* DELoginViewController.h */,
+				08FC692D1E7418D800D79F18 /* DELoginViewController.m */,
+			);
+			name = RegisterAndLogin;
+			sourceTree = "<group>";
+		};
+		1EB7AB0FD984AD48628145C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2DC111A2859BC4CCDE198049 /* libPods-DriverEpoch.a */,
+				8CDA66505F866C3547CF57DE /* libPods-DriverEpochTests.a */,
+				67F593E86677E27E44B108E5 /* libPods-DriverEpochUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4E10ABAE1E71339F00BCF21B = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +150,8 @@
 				4E10ABD31E71339F00BCF21B /* DriverEpochTests */,
 				4E10ABDE1E71339F00BCF21B /* DriverEpochUITests */,
 				4E10ABB81E71339F00BCF21B /* Products */,
+				9E5BEA0C1B7E7F8AFB67D60B /* Pods */,
+				1EB7AB0FD984AD48628145C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +168,7 @@
 		4E10ABB91E71339F00BCF21B /* DriverEpoch */ = {
 			isa = PBXGroup;
 			children = (
+				08FC69281E74186B00D79F18 /* RegisterAndLogin */,
 				4E10ABF01E713E0200BCF21B /* Main */,
 				4E10ABF81E71450500BCF21B /* Driving */,
 				4E10ABF91E71452700BCF21B /* Information */,
@@ -180,6 +228,8 @@
 			children = (
 				4E10ABFB1E71457C00BCF21B /* DrivingViewController.h */,
 				4E10ABFC1E71457C00BCF21B /* DrivingViewController.m */,
+				08339E131E7560BA005DABBA /* DrivingCollectionViewCell.h */,
+				08339E141E7560BA005DABBA /* DrivingCollectionViewCell.m */,
 				4E10AC051E71569400BCF21B /* DrivingTopView.h */,
 				4E10AC061E71569400BCF21B /* DrivingTopView.m */,
 				4E10AC081E724CD900BCF21B /* LocationViewController.h */,
@@ -206,6 +256,19 @@
 			name = Me;
 			sourceTree = "<group>";
 		};
+		9E5BEA0C1B7E7F8AFB67D60B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC505DE0BB4EB00E1664063D /* Pods-DriverEpoch.debug.xcconfig */,
+				C627575FC3CCEE6550CECB13 /* Pods-DriverEpoch.release.xcconfig */,
+				DB8598C64748D2810126E6F3 /* Pods-DriverEpochTests.debug.xcconfig */,
+				4346EAE266E0B06C72EE4F08 /* Pods-DriverEpochTests.release.xcconfig */,
+				07E84A4D0C8B24972A963A8B /* Pods-DriverEpochUITests.debug.xcconfig */,
+				758D4F97A52E549ACB3B54A7 /* Pods-DriverEpochUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,9 +276,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E10ABE41E71339F00BCF21B /* Build configuration list for PBXNativeTarget "DriverEpoch" */;
 			buildPhases = (
+				547BE31A7FF3718315D798A6 /* [CP] Check Pods Manifest.lock */,
 				4E10ABB31E71339F00BCF21B /* Sources */,
 				4E10ABB41E71339F00BCF21B /* Frameworks */,
 				4E10ABB51E71339F00BCF21B /* Resources */,
+				20E9AE548E129BD7AF56D9A4 /* [CP] Embed Pods Frameworks */,
+				3F045279F3EA2A369ED55646 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,9 +296,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E10ABE71E71339F00BCF21B /* Build configuration list for PBXNativeTarget "DriverEpochTests" */;
 			buildPhases = (
+				AD300C1D89CB0F50D9B4F0CA /* [CP] Check Pods Manifest.lock */,
 				4E10ABCC1E71339F00BCF21B /* Sources */,
 				4E10ABCD1E71339F00BCF21B /* Frameworks */,
 				4E10ABCE1E71339F00BCF21B /* Resources */,
+				F81E272CE6D1FB4C8F0D3AB5 /* [CP] Embed Pods Frameworks */,
+				BAE7A2EF36F404874EE140D6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,9 +317,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E10ABEA1E71339F00BCF21B /* Build configuration list for PBXNativeTarget "DriverEpochUITests" */;
 			buildPhases = (
+				B58A72B3676B7D716FBDA921 /* [CP] Check Pods Manifest.lock */,
 				4E10ABD71E71339F00BCF21B /* Sources */,
 				4E10ABD81E71339F00BCF21B /* Frameworks */,
 				4E10ABD91E71339F00BCF21B /* Resources */,
+				C40395A09547E0C59E6029A5 /* [CP] Embed Pods Frameworks */,
+				4FD09B3BD8FB6D1F3725023A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -336,18 +408,159 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		20E9AE548E129BD7AF56D9A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DriverEpoch/Pods-DriverEpoch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F045279F3EA2A369ED55646 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DriverEpoch/Pods-DriverEpoch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FD09B3BD8FB6D1F3725023A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DriverEpochUITests/Pods-DriverEpochUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		547BE31A7FF3718315D798A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AD300C1D89CB0F50D9B4F0CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B58A72B3676B7D716FBDA921 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BAE7A2EF36F404874EE140D6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DriverEpochTests/Pods-DriverEpochTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C40395A09547E0C59E6029A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DriverEpochUITests/Pods-DriverEpochUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F81E272CE6D1FB4C8F0D3AB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DriverEpochTests/Pods-DriverEpochTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4E10ABB31E71339F00BCF21B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08FC692B1E7418CA00D79F18 /* DERegisterViewController.m in Sources */,
 				4E10ABF31E713E7300BCF21B /* DENavigationController.m in Sources */,
 				4E10ABBF1E71339F00BCF21B /* AppDelegate.m in Sources */,
 				4E10ABEF1E713DE700BCF21B /* DETabBarController.m in Sources */,
 				4E10ABF61E7143C200BCF21B /* DEViewController.m in Sources */,
 				4E10ABFD1E71457C00BCF21B /* DrivingViewController.m in Sources */,
 				4E10AC001E71458D00BCF21B /* InfoViewController.m in Sources */,
+				08FC692E1E7418D800D79F18 /* DELoginViewController.m in Sources */,
 				4E10AC031E71459900BCF21B /* MeViewController.m in Sources */,
+				08339E151E7560BA005DABBA /* DrivingCollectionViewCell.m in Sources */,
 				4E10ABBC1E71339F00BCF21B /* main.m in Sources */,
 				4E10AC071E71569400BCF21B /* DrivingTopView.m in Sources */,
 				4E10AC0A1E724CD900BCF21B /* LocationViewController.m in Sources */,
@@ -493,10 +706,13 @@
 		};
 		4E10ABE51E71339F00BCF21B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC505DE0BB4EB00E1664063D /* Pods-DriverEpoch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V2GC55R3DL;
+				GCC_PREFIX_HEADER = /Users/LY/Desktop/DriverEpoch/DriverEpoch/PrefixHeader.pch;
 				INFOPLIST_FILE = DriverEpoch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "http---halohily.com.DriverEpoch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -505,10 +721,13 @@
 		};
 		4E10ABE61E71339F00BCF21B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C627575FC3CCEE6550CECB13 /* Pods-DriverEpoch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V2GC55R3DL;
+				GCC_PREFIX_HEADER = /Users/LY/Desktop/DriverEpoch/DriverEpoch/PrefixHeader.pch;
 				INFOPLIST_FILE = DriverEpoch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "http---halohily.com.DriverEpoch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -517,6 +736,7 @@
 		};
 		4E10ABE81E71339F00BCF21B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB8598C64748D2810126E6F3 /* Pods-DriverEpochTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = V2GC55R3DL;
@@ -530,6 +750,7 @@
 		};
 		4E10ABE91E71339F00BCF21B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4346EAE266E0B06C72EE4F08 /* Pods-DriverEpochTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = V2GC55R3DL;
@@ -543,6 +764,7 @@
 		};
 		4E10ABEB1E71339F00BCF21B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07E84A4D0C8B24972A963A8B /* Pods-DriverEpochUITests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = V2GC55R3DL;
 				INFOPLIST_FILE = DriverEpochUITests/Info.plist;
@@ -555,6 +777,7 @@
 		};
 		4E10ABEC1E71339F00BCF21B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 758D4F97A52E549ACB3B54A7 /* Pods-DriverEpochUITests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = V2GC55R3DL;
 				INFOPLIST_FILE = DriverEpochUITests/Info.plist;
