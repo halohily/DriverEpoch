@@ -65,33 +65,8 @@
     DividingLine.layer.borderColor = [[UIColor colorWithRed:166/255.0 green:166/255.0  blue:166/255.0  alpha:1] CGColor];
     DividingLine.layer.borderWidth = 1;
     [whiteView addSubview:DividingLine];
-    
-    User = [[UIButton alloc] initWithFrame:CGRectMake(DEAppWidth * 0.04, DEAppHeight * 0.142 +245, DEAppWidth * 0.44, 30)];
-    User.layer.cornerRadius = 4;
-    User.layer.masksToBounds = YES;
-    User.layer.borderWidth = 1;
-    User.layer.borderColor = [UIColorFromHEX(0xa6a6a6) CGColor];
-    [User setTitle:@"用户" forState:UIControlStateNormal];
-    User.titleLabel.font = [UIFont systemFontOfSize:12];
-    [User setTitleColor:UIColorFromHEX(0xf2f2f4) forState:UIControlStateNormal];
-    [User setBackgroundColor:UIColorFromHEX(0xa6a6a6)];
-    [User addTarget:self action:@selector(ClickUser:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:User];
-    
-    
-    Designer = [[UIButton alloc] initWithFrame:CGRectMake(DEAppWidth * 0.52, DEAppHeight * 0.142 + 245, DEAppWidth * 0.44, 30)];
-    Designer.layer.cornerRadius = 4;
-    Designer.layer.masksToBounds = YES;
-    Designer.layer.borderWidth = 1;
-    Designer.layer.borderColor = [UIColorFromHEX(0xa6a6a6) CGColor];
-    [Designer setTitle:@"设计师" forState:UIControlStateNormal];
-    [Designer setTitleColor:UIColorFromHEX(0xa6a6a6) forState:UIControlStateNormal];
-    Designer.titleLabel.font = [UIFont systemFontOfSize:12];
-    [Designer setBackgroundColor:UIColorFromHEX(0xf2f2f4)];
-    [Designer addTarget:self action:@selector(ClickDesigner:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:Designer];
-    
-    Login = [[UIButton alloc] initWithFrame:CGRectMake(DEAppWidth * 0.04, DEAppHeight * 0.142 + 290, DEAppWidth * 0.92, 40)];
+        
+    Login = [[UIButton alloc] initWithFrame:CGRectMake(DEAppWidth * 0.04, DEAppHeight * 0.142 + 245, DEAppWidth * 0.92, 40)];
     Login.layer.cornerRadius = 4;
     Login.layer.masksToBounds = YES;
     [Login setTitle:@"登录" forState:UIControlStateNormal];
@@ -101,7 +76,7 @@
     [Login addTarget:self action:@selector(Loginclicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:Login];
     
-    GotoRegister = [[UIButton alloc] initWithFrame:CGRectMake(0, DEAppHeight * 0.142 + 355, DEAppWidth, 20)];
+    GotoRegister = [[UIButton alloc] initWithFrame:CGRectMake(0, DEAppHeight * 0.142 + 310, DEAppWidth, 20)];
     [GotoRegister setTitle:@"没有账号？快来注册" forState:UIControlStateNormal];
     GotoRegister.titleLabel.font = [UIFont systemFontOfSize:12];
     [GotoRegister setTitleColor:[UIColor colorWithRed:107/255.0 green:107/255.0 blue:118/255.0 alpha:1] forState:UIControlStateNormal];

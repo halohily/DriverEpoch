@@ -41,7 +41,7 @@
     [self addChildViewController:vc2 withImage:[UIImage imageNamed:@"tabbar_news"] selectedImage:[UIImage imageNamed:@"tabbar_news_hl"] withTittle:@"资讯"];
     
     MeViewController *vc3 = [[MeViewController alloc] init];
-    [self addChildViewController:vc3 withImage:[UIImage imageNamed:@"tabbar_setting"] selectedImage:[UIImage imageNamed:@"tabbar_setting_hl"] withTittle:@"我的"];
+    [self addChildViewController:vc3 withImage:[UIImage imageNamed:@"tabbar_setting"] selectedImage:[UIImage imageNamed:@"tabbar_setting_hl"] withTittle:@"我"];
     
 }
 

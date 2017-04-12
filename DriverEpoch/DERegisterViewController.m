@@ -86,33 +86,8 @@
     DividingLine2.layer.borderColor = [[UIColor colorWithRed:166/255.0 green:166/255.0  blue:166/255.0  alpha:1] CGColor];
     DividingLine2.layer.borderWidth = 1;
     [whiteView addSubview:DividingLine2];
-    
-    User = [[UIButton alloc] initWithFrame:CGRectMake(width * 0.04, height * 0.135 + 265, width * 0.44, 30)];
-    User.layer.cornerRadius = 4;
-    User.layer.masksToBounds = YES;
-    User.layer.borderWidth = 0.5;
-    User.layer.borderColor = [[UIColor colorWithRed:166/255.0 green:166/255.0 blue:166/255.0 alpha:1] CGColor];
-    [User setTitle:@"用户" forState:UIControlStateNormal];
-    User.titleLabel.font = [UIFont systemFontOfSize:12];
-    [User setBackgroundColor:[UIColor colorWithRed:166/255.0 green:166/255.0 blue:166/255.0 alpha:1]];
-    [User setTitleColor:[UIColor colorWithRed:242/255.0 green:242/255.0 blue:244/255.0 alpha:1]forState:UIControlStateNormal];    [User addTarget:self action:@selector(ClickUser:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:User];
-    
-    
-    Designer = [[UIButton alloc] initWithFrame:CGRectMake(width * 0.52, height * 0.135 + 265, width * 0.44, 30)];
-    Designer.layer.cornerRadius = 4;
-    Designer.layer.masksToBounds = YES;
-    Designer.layer.borderWidth = 0.5;
-    Designer.layer.borderColor = [[UIColor colorWithRed:166/255.0 green:166/255.0 blue:166/255.0 alpha:1] CGColor];
-    [Designer setTitle:@"设计师" forState:UIControlStateNormal];
-    Designer.titleLabel.font = [UIFont systemFontOfSize:12];
-    [Designer setBackgroundColor:[UIColor colorWithRed:242/255.0 green:242/255.0 blue:244/255.0 alpha:1]];
-    [Designer setTitleColor:[UIColor colorWithRed:166/255.0 green:166/255.0 blue:166/255.0 alpha:1] forState:UIControlStateNormal];
-    
-    [Designer addTarget:self action:@selector(ClickDesigner:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:Designer];
-    
-    Register = [[UIButton alloc] initWithFrame:CGRectMake(width * 0.04, height * 0.135 + 310, width * 0.92, 40)];
+        
+    Register = [[UIButton alloc] initWithFrame:CGRectMake(width * 0.04, height * 0.135 + 265, width * 0.92, 40)];
     Register.layer.cornerRadius = 4;
     Register.layer.masksToBounds = YES;
     [Register setTitle:@"立即注册" forState:UIControlStateNormal];
@@ -122,7 +97,7 @@
     [Register addTarget:self action:@selector(PushRegister:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:Register];
     
-    BackToLogin = [[UIButton alloc] initWithFrame:CGRectMake(0, height * 0.135 + 375, width, 20)];
+    BackToLogin = [[UIButton alloc] initWithFrame:CGRectMake(0, height * 0.135 + 330, width, 20)];
     [BackToLogin setTitle:@"返回登录" forState:UIControlStateNormal];
     BackToLogin.titleLabel.font = [UIFont systemFontOfSize:12];
     [BackToLogin setTitleColor:[UIColor colorWithRed:107/255.0 green:107/255.0 blue:118/255.0 alpha:1] forState:UIControlStateNormal];
