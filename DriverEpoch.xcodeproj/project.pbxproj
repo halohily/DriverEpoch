@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		08339E151E7560BA005DABBA /* DrivingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08339E141E7560BA005DABBA /* DrivingCollectionViewCell.m */; };
+		08A13D3D1EA3AE650054C8C4 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A13D3C1EA3AE650054C8C4 /* InfoCell.m */; };
+		08A13D401EA3B0490054C8C4 /* InfoDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A13D3F1EA3B0490054C8C4 /* InfoDetailController.m */; };
+		08A13D431EA3B1D10054C8C4 /* InfoHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A13D421EA3B1D10054C8C4 /* InfoHeadCell.m */; };
 		08FC692B1E7418CA00D79F18 /* DERegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FC692A1E7418CA00D79F18 /* DERegisterViewController.m */; };
 		08FC692E1E7418D800D79F18 /* DELoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FC692D1E7418D800D79F18 /* DELoginViewController.m */; };
 		09F4611397C2F1CC770233C0 /* libPods-DriverEpochTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDA66505F866C3547CF57DE /* libPods-DriverEpochTests.a */; };
@@ -50,6 +53,12 @@
 		07E84A4D0C8B24972A963A8B /* Pods-DriverEpochUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverEpochUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriverEpochUITests/Pods-DriverEpochUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		08339E131E7560BA005DABBA /* DrivingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrivingCollectionViewCell.h; sourceTree = "<group>"; };
 		08339E141E7560BA005DABBA /* DrivingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrivingCollectionViewCell.m; sourceTree = "<group>"; };
+		08A13D3B1EA3AE650054C8C4 /* InfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
+		08A13D3C1EA3AE650054C8C4 /* InfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCell.m; sourceTree = "<group>"; };
+		08A13D3E1EA3B0490054C8C4 /* InfoDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoDetailController.h; sourceTree = "<group>"; };
+		08A13D3F1EA3B0490054C8C4 /* InfoDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoDetailController.m; sourceTree = "<group>"; };
+		08A13D411EA3B1D10054C8C4 /* InfoHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoHeadCell.h; sourceTree = "<group>"; };
+		08A13D421EA3B1D10054C8C4 /* InfoHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoHeadCell.m; sourceTree = "<group>"; };
 		08FC69291E7418CA00D79F18 /* DERegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DERegisterViewController.h; sourceTree = "<group>"; };
 		08FC692A1E7418CA00D79F18 /* DERegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DERegisterViewController.m; sourceTree = "<group>"; };
 		08FC692C1E7418D800D79F18 /* DELoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DELoginViewController.h; sourceTree = "<group>"; };
@@ -243,6 +252,12 @@
 			children = (
 				4E10ABFE1E71458D00BCF21B /* InfoViewController.h */,
 				4E10ABFF1E71458D00BCF21B /* InfoViewController.m */,
+				08A13D3B1EA3AE650054C8C4 /* InfoCell.h */,
+				08A13D3C1EA3AE650054C8C4 /* InfoCell.m */,
+				08A13D3E1EA3B0490054C8C4 /* InfoDetailController.h */,
+				08A13D3F1EA3B0490054C8C4 /* InfoDetailController.m */,
+				08A13D411EA3B1D10054C8C4 /* InfoHeadCell.h */,
+				08A13D421EA3B1D10054C8C4 /* InfoHeadCell.m */,
 			);
 			name = Information;
 			sourceTree = "<group>";
@@ -556,7 +571,9 @@
 				4E10ABBF1E71339F00BCF21B /* AppDelegate.m in Sources */,
 				4E10ABEF1E713DE700BCF21B /* DETabBarController.m in Sources */,
 				4E10ABF61E7143C200BCF21B /* DEViewController.m in Sources */,
+				08A13D3D1EA3AE650054C8C4 /* InfoCell.m in Sources */,
 				4E10ABFD1E71457C00BCF21B /* DrivingViewController.m in Sources */,
+				08A13D431EA3B1D10054C8C4 /* InfoHeadCell.m in Sources */,
 				4E10AC001E71458D00BCF21B /* InfoViewController.m in Sources */,
 				08FC692E1E7418D800D79F18 /* DELoginViewController.m in Sources */,
 				4E10AC031E71459900BCF21B /* MeViewController.m in Sources */,
@@ -564,6 +581,7 @@
 				4E10ABBC1E71339F00BCF21B /* main.m in Sources */,
 				4E10AC071E71569400BCF21B /* DrivingTopView.m in Sources */,
 				4E10AC0A1E724CD900BCF21B /* LocationViewController.m in Sources */,
+				08A13D401EA3B0490054C8C4 /* InfoDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,6 +727,7 @@
 			baseConfigurationReference = BC505DE0BB4EB00E1664063D /* Pods-DriverEpoch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = V2GC55R3DL;
 				GCC_PREFIX_HEADER = /Users/LY/Desktop/DriverEpoch/DriverEpoch/PrefixHeader.pch;
 				INFOPLIST_FILE = DriverEpoch/Info.plist;
@@ -724,6 +743,7 @@
 			baseConfigurationReference = C627575FC3CCEE6550CECB13 /* Pods-DriverEpoch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = V2GC55R3DL;
 				GCC_PREFIX_HEADER = /Users/LY/Desktop/DriverEpoch/DriverEpoch/PrefixHeader.pch;
 				INFOPLIST_FILE = DriverEpoch/Info.plist;
