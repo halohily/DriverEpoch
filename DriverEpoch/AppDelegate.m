@@ -10,8 +10,10 @@
 #import "DETabBarController.h"
 #import "DELoginViewController.h"
 #import "DENavigationController.h"
-@interface AppDelegate ()
 
+#import <AMapFoundationKit/AMapFoundationKit.h>
+
+@interface AppDelegate ()
 @end
 
 @implementation AppDelegate
@@ -20,24 +22,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    // 要使用百度地图，请先启动BaiduMapManager
-    _mapManager = [[BMKMapManager alloc]init];
-    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
-    BOOL ret = [_mapManager start:@"aoXVXi8byAmGXP5zkiFpVVKZeGpmnbZq"  generalDelegate:nil];
-    if (!ret) {
-        NSLog(@"manager start failed!");
-    }
-    else{
-        NSLog(@"manager init succeed");
-    }
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[DETabBarController alloc] init];
-    [self.window makeKeyAndVisible];
-    
-    DELoginViewController *login = [[DELoginViewController alloc] init];
-    DENavigationController *loginNav = [[DENavigationController alloc] initWithRootViewController:login];
-    loginNav.navigationBar.hidden = YES;
-    [self.window.rootViewController presentViewController:loginNav animated:YES completion:NULL];
+    [self weatherConfig];
+    [self mapConfig];
+    [self setupWindow];
     
     return YES;
 }
@@ -69,5 +56,27 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)weatherConfig
+{
+    [[NSUserDefaults standardUserDefaults] setObject:@"6acbcbe1487348e98f807d0aa2b7185c" forKey:@"weather_key"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
+- (void)mapConfig
+{
+    //amap config
+    [AMapServices sharedServices].apiKey = @"68e2e07aa6a11c57c0527837e49e9a74";
+}
+
+- (void)setupWindow
+{
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[DETabBarController alloc] init];
+    [self.window makeKeyAndVisible];
+    
+    DELoginViewController *login = [[DELoginViewController alloc] init];
+    DENavigationController *loginNav = [[DENavigationController alloc] initWithRootViewController:login];
+    loginNav.navigationBar.hidden = YES;
+    [self.window.rootViewController presentViewController:loginNav animated:YES completion:NULL];
+}
 @end

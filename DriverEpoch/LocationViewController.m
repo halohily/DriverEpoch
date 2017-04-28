@@ -8,7 +8,7 @@
 
 #import "LocationViewController.h"
 
-@interface LocationViewController ()
+@interface LocationViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -28,8 +28,11 @@
     top.backgroundColor = DENavBarColorBlue;
     [self.view addSubview:top];
     
-    UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(15, 35, 20, 20)];
-    [closeBtn setImage:[UIImage imageNamed:@"left_icon_close"] forState:UIControlStateNormal];
+    UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(15, 35, 25, 25)];
+    
+    [closeBtn setTitle:@"\U0000e86d" forState:UIControlStateNormal];
+    closeBtn.titleLabel.font = [UIFont fontWithName:@"iconfont" size:25.0];
+    
     [closeBtn addTarget:self action:@selector(closeBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [top addSubview:closeBtn];
     
@@ -59,19 +62,36 @@
     self.locationLabel = location;
     [locationView addSubview:location];
     
-    UIButton *reLocate = [[UIButton alloc] initWithFrame:CGRectMake(DEAppWidth * 0.8, 15, DEAppWidth * 0.2, 15)];
-    [reLocate setTitle:@"重新定位" forState:UIControlStateNormal];
+    UIButton *reLocate = [[UIButton alloc] initWithFrame:CGRectMake(DEAppWidth - 90, 15, 80, 15)];
+    [reLocate setTitle:@"\U0000e8a4 重新定位" forState:UIControlStateNormal];
     [reLocate setTitleColor:DEColor(26, 152, 252) forState:UIControlStateNormal];
-    reLocate.titleLabel.font = [UIFont systemFontOfSize:15];
-    reLocate.contentHorizontalAlignment = NSTextAlignmentCenter;
+    reLocate.titleLabel.font = [UIFont fontWithName:@"iconfont" size:15.0];
+    reLocate.contentHorizontalAlignment = NSTextAlignmentRight;
     [reLocate addTarget:self action:@selector(reLocateClick) forControlEvents:UIControlEventTouchUpInside];
     [locationView addSubview:reLocate];
+    
+    UILabel *headerLabelMore = [[UILabel alloc] initWithFrame:CGRectMake(15, 200, 200, 15)];
+    headerLabelMore.font = [UIFont systemFontOfSize:15];
+    headerLabelMore.textAlignment = NSTextAlignmentLeft;
+    headerLabelMore.textColor = DEColor(101, 102, 103);
+    headerLabelMore.text = @"附近地址";
+    [self.view addSubview:headerLabelMore];
+    
+    UITableView *addressTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 240, DEAppWidth, 135) style:UITableViewStylePlain];
+    addressTable.delegate = self;
+    addressTable.dataSource = self;
+    [self.view addSubview:addressTable];
+    
     
 }
 
 - (void)reLocateClick
 {
     NSLog(@"--reLocateClicked--");
+    [self.delegate respondsToSelector:@selector(reLocate)];
+    [self.delegate reLocate];
+    [self dismissViewControllerAnimated:YES completion:NULL];
+
 }
 
 - (void)closeBtnClick
@@ -88,6 +108,37 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark tableview delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.pois count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 45;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    cell.textLabel.font = [UIFont systemFontOfSize:15];
+    cell.textLabel.textColor = DEColor(51, 52, 53);
+    cell.textLabel.textAlignment = NSTextAlignmentLeft;
+    cell.textLabel.text = self.pois[indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [[NSUserDefaults standardUserDefaults] setObject:self.pois[indexPath.row] forKey:@"address"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSNotification *changeAddNotice = [[NSNotification alloc] initWithName:@"changeAddress" object:nil userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:changeAddNotice];
+    [self closeBtnClick];
+}
 /*
 #pragma mark - Navigation
 

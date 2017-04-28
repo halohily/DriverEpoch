@@ -6,8 +6,9 @@ target 'DriverEpoch' do
   # use_frameworks!
      pod "AFNetworking"
      pod "SDWebImage"
-     pod “MBProgressHUD”
-     pod “BaiduMapKit”
+     pod "MBProgressHUD"
+     pod "BaiduMapKit"
+     pod "AMapSearch"
   # Pods for DriverEpoch
 
   target 'DriverEpochTests' do

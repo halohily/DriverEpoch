@@ -39,14 +39,14 @@
         
         UILabel *time = [[UILabel alloc] initWithFrame:CGRectMake(175, 70, 50, 10)];
         time.textAlignment = NSTextAlignmentLeft;
-        time.font = [UIFont systemFontOfSize:10.0];
+        time.font = [UIFont fontWithName:@"iconfont" size:10.0];
         time.textColor = [UIColor grayColor];
         [self.contentView addSubview:time];
         self.timeLabel = time;
         
         UILabel *source = [[UILabel alloc] initWithFrame:CGRectMake(DEAppWidth - 90, 70, 80, 10)];
         source.textAlignment = NSTextAlignmentLeft;
-        source.font = [UIFont systemFontOfSize:10.0];
+        source.font = [UIFont fontWithName:@"iconfont" size:10.0];
         source.textColor = [UIColor grayColor];
         [self.contentView addSubview:source];
         self.sourceLabel = source;

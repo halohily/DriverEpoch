@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol LocationViewDelegate <NSObject>
+
+- (void)reLocate;
+
+@end
 @interface LocationViewController : UIViewController
 
-@property (nonatomic, weak) NSString *locationStr;
-@property (nonatomic, weak) UILabel *locationLabel;
+@property (nonatomic, strong) NSString *locationStr;
+@property (nonatomic, strong) UILabel *locationLabel;
+@property (nonatomic, strong) NSMutableArray *pois;
+@property (nonatomic, weak) id<LocationViewDelegate> delegate;
 
 @end

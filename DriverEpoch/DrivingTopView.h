@@ -14,6 +14,7 @@
 
 - (void) reLocateBtnClick;
 
+- (void) weatherInfo;
 @end
 
 
@@ -27,13 +28,13 @@
 
 @property (nonatomic, weak) id <DrivingTopViewDelegate> delegate;
 
-@property (nonatomic, weak) UIImageView *locationImage;
-@property (nonatomic, weak) UILabel *locationLabel;
+@property (nonatomic, strong) UILabel *locationImage;
+@property (nonatomic, strong) UILabel *locationLabel;
 
-@property (nonatomic, weak) UILabel *temperatureLabel;
-@property (nonatomic, weak) UILabel *weatherLabel;
-@property (nonatomic, weak) UIImageView *weatherImage;
-@property (nonatomic, weak) UIView *locationBtn;
+@property (nonatomic, strong) UILabel *temperatureLabel;
+@property (nonatomic, strong) UILabel *weatherLabel;
+@property (nonatomic, strong) UIButton *weatherInfos;
+@property (nonatomic, strong) UIView *locationBtn;
 - (instancetype)initWithFrame:(CGRect)frame;
 
 @end

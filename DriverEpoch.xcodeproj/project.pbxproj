@@ -11,6 +11,7 @@
 		08A13D3D1EA3AE650054C8C4 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A13D3C1EA3AE650054C8C4 /* InfoCell.m */; };
 		08A13D401EA3B0490054C8C4 /* InfoDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A13D3F1EA3B0490054C8C4 /* InfoDetailController.m */; };
 		08A13D431EA3B1D10054C8C4 /* InfoHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A13D421EA3B1D10054C8C4 /* InfoHeadCell.m */; };
+		08A9F9311EB39BAD0039E381 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08A9F9301EB399A40039E381 /* iconfont.ttf */; };
 		08FC692B1E7418CA00D79F18 /* DERegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FC692A1E7418CA00D79F18 /* DERegisterViewController.m */; };
 		08FC692E1E7418D800D79F18 /* DELoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FC692D1E7418D800D79F18 /* DELoginViewController.m */; };
 		09F4611397C2F1CC770233C0 /* libPods-DriverEpochTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDA66505F866C3547CF57DE /* libPods-DriverEpochTests.a */; };
@@ -59,6 +60,7 @@
 		08A13D3F1EA3B0490054C8C4 /* InfoDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoDetailController.m; sourceTree = "<group>"; };
 		08A13D411EA3B1D10054C8C4 /* InfoHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoHeadCell.h; sourceTree = "<group>"; };
 		08A13D421EA3B1D10054C8C4 /* InfoHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoHeadCell.m; sourceTree = "<group>"; };
+		08A9F9301EB399A40039E381 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		08FC69291E7418CA00D79F18 /* DERegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DERegisterViewController.h; sourceTree = "<group>"; };
 		08FC692A1E7418CA00D79F18 /* DERegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DERegisterViewController.m; sourceTree = "<group>"; };
 		08FC692C1E7418D800D79F18 /* DELoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DELoginViewController.h; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		4E10ABBA1E71339F00BCF21B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				08A9F9301EB399A40039E381 /* iconfont.ttf */,
 				4E10ABBB1E71339F00BCF21B /* main.m */,
 				4E10AC041E714FA700BCF21B /* PrefixHeader.pch */,
 			);
@@ -402,6 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A9F9311EB39BAD0039E381 /* iconfont.ttf in Resources */,
 				4E10ABCA1E71339F00BCF21B /* LaunchScreen.storyboard in Resources */,
 				4E10ABC71E71339F00BCF21B /* Assets.xcassets in Resources */,
 			);

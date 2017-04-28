@@ -35,7 +35,7 @@
 - (void)setupTabbar
 {
     DrivingViewController *vc1 = [[DrivingViewController alloc] init];
-    [self addChildViewController:vc1 withImage:[UIImage imageNamed:@"tabbar_video"] selectedImage:[UIImage imageNamed:@"tabbar_video_hl"] withTittle:@"行车"];
+    [self addChildViewController:vc1 withImage:[UIImage imageNamed:@"car"] selectedImage:[UIImage imageNamed:@"carHigh"] withTittle:@"行车"];
     
     InfoViewController *vc2 = [[InfoViewController alloc] init];
     [self addChildViewController:vc2 withImage:[UIImage imageNamed:@"tabbar_news"] selectedImage:[UIImage imageNamed:@"tabbar_news_hl"] withTittle:@"资讯"];
@@ -51,7 +51,7 @@
     DENavigationController *nav = [[DENavigationController alloc] initWithRootViewController:controller];
     
     [nav.tabBarItem setImage:image];
-    [nav.tabBarItem setSelectedImage:selectImage];
+    //[nav.tabBarItem setSelectedImage:selectImage];
     
     controller.title = tittle;
     

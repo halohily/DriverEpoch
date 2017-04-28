@@ -29,15 +29,15 @@
 - (void)setupData
 {
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    NSDictionary *dic = @{@"picture":@"img04",@"title":@"谈一谈安全驾驶的重要性",@"time":@"1小时前",@"source":@"中国汽车网"};
+    NSDictionary *dic = @{@"picture":@"img04",@"title":@"谈一谈安全驾驶的重要性",@"time":@"\U0000e6fd 1小时前",@"source":@"\U0000e63b 中国汽车网"};
     [array addObject:dic];
-    NSDictionary *dic2 = @{@"picture":@"img01",@"title":@"你知道什么是汽车道路的重点吗？",@"time":@"1小时前",@"source":@"中国汽车网"};
+    NSDictionary *dic2 = @{@"picture":@"img01",@"title":@"你知道什么是汽车道路的重点吗？",@"time":@"\U0000e6fd 1小时前",@"source":@"\U0000e63b 中国汽车网"};
     [array addObject:dic2];
-    NSDictionary *dic3 = @{@"picture":@"img02",@"title":@"做一个合法守序的驾驶员",@"time":@"2小时前",@"source":@"中国汽车网"};
+    NSDictionary *dic3 = @{@"picture":@"img02",@"title":@"做一个合法守序的驾驶员",@"time":@"\U0000e6fd 2小时前",@"source":@"\U0000e63b 中国汽车网"};
     [array addObject:dic3];
-    NSDictionary *dic4 = @{@"picture":@"img03",@"title":@"我们一起去快乐旅行",@"time":@"3小时前",@"source":@"中国汽车网"};
+    NSDictionary *dic4 = @{@"picture":@"img03",@"title":@"我们一起去快乐旅行",@"time":@"\U0000e6fd 3小时前",@"source":@"\U0000e63b 中国汽车网"};
     [array addObject:dic4];
-    NSDictionary *dic5 = @{@"picture":@"img05",@"title":@"你知道什么是汽车道路的重点吗？",@"time":@"3小时前",@"source":@"中国汽车网"};
+    NSDictionary *dic5 = @{@"picture":@"img05",@"title":@"你知道什么是汽车道路的重点吗？",@"time":@"\U0000e6fd 3小时前",@"source":@"\U0000e63b 中国汽车网"};
     [array addObject:dic5];
     self.infoArr = array;
 }
