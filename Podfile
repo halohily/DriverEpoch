@@ -7,7 +7,6 @@ target 'DriverEpoch' do
      pod "AFNetworking"
      pod "SDWebImage"
      pod "MBProgressHUD"
-     pod "BaiduMapKit"
      pod "AMapSearch"
   # Pods for DriverEpoch
 
