@@ -10,7 +10,7 @@
 
 @interface DrivingCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, weak) UIImageView *itemImage;
-@property (nonatomic, weak) UILabel *itemName;
--(instancetype)mycell;
+@property (nonatomic, strong) UILabel *itemIcon;
+@property (nonatomic, strong) UILabel *itemName;
+
 @end

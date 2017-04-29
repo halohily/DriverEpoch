@@ -21,8 +21,8 @@
 @interface DrivingViewController ()
 <DrivingTopViewDelegate,
 LocationViewDelegate,
+UICollectionViewDelegate,
 UICollectionViewDataSource,
-UICollectionViewDelegateFlowLayout,
 CLLocationManagerDelegate,
 AMapSearchDelegate>
 
@@ -56,7 +56,8 @@ AMapSearchDelegate>
 
 - (void)initData
 {
-    self.collectionItems = [NSArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"s", @"name", @"epoch", @"image", nil], [NSDictionary dictionaryWithObjectsAndKeys:@"s", @"name", @"image", @"image", nil], [NSDictionary dictionaryWithObjectsAndKeys:@"s", @"name", @"epoch", @"image", nil], [NSDictionary dictionaryWithObjectsAndKeys:@"s", @"name", @"epoch", @"image", nil], [NSDictionary dictionaryWithObjectsAndKeys:@"s", @"name", @"epoch", @"image", nil], nil];
+    NSArray *itemArr = @[@{@"name": @"加油站", @"image": @"\U0000e64b", @"color": [UIColor redColor], @"bgcolor": DEColor(151, 225, 138)}, @{@"name": @"紧急呼救", @"image": @"\U0000e61b", @"color": [UIColor redColor], @"bgcolor": DEColor(242, 176, 163)}, @{@"name": @"停车场", @"image": @"\U0000e608", @"color": DEColor(255, 233, 35), @"bgcolor": DEColor(108, 209, 253)}, @{@"name": @"养护爱车", @"image": @"\U0000e875", @"color": DEColor(231, 226, 47), @"bgcolor": DENavBarColorBlue}, @{@"name": @"汽车维修", @"image": @"\U0000e6a5", @"color": DEColor(108, 209, 253), @"bgcolor": DEColor(242, 176, 163)}, @{@"name": @"汽车销售", @"image": @"\U0000e613", @"color": [UIColor yellowColor], @"bgcolor": DEColor(151, 225, 138)}, @{@"name": @"限行查询", @"image": @"\U0000e60b", @"color": DEColor(101, 101, 101), @"bgcolor": DEColor(249, 239, 192)}];
+    self.collectionItems = itemArr;
 }
 
 - (void)initProperty
@@ -89,14 +90,14 @@ AMapSearchDelegate>
     topview.delegate = self;
     self.topView = topview;
      NSLog(@"%@",self.collectionItems[2][@"name"]);
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.itemSize = CGSizeMake(DEAppWidth/2 - 2, DEAppWidth/2 - 2);
-    flowLayout.minimumLineSpacing = 2;
-    flowLayout.minimumInteritemSpacing = 2;
-    flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
-    UICollectionView *mainView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 100, DEAppWidth, DEAppHeight - 100) collectionViewLayout:flowLayout];
-    mainView.backgroundColor = [UIColor whiteColor];
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.itemSize = CGSizeMake(DEAppWidth/2 - 0.5, (DEAppHeight - 150)/3 - 1);
+    flowLayout.sectionInset = UIEdgeInsetsZero;
+    flowLayout.minimumInteritemSpacing = 1.0;
+    flowLayout.minimumLineSpacing = 1.0;
+    UICollectionView *mainView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 100, DEAppWidth, DEAppHeight - 150) collectionViewLayout:flowLayout];
+    mainView.backgroundColor = DEColor(245, 245, 245);
     mainView.delegate = self;
     mainView.dataSource = self;
     [mainView registerClass:[DrivingCollectionViewCell class]
@@ -161,9 +162,7 @@ AMapSearchDelegate>
              NSLog(@"%@",error);  //这里打印错误信息
              
     }];
-//    AFHTTPRequestSerializer *manager = [AFHTTPRequestSerializer serializer];
-//    [manager GET:url parameters:parameters progress:<#^(NSProgress * _Nonnull downloadProgress)downloadProgress#> success:<#^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)success#> failure:<#^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)failure#>]
-//    [manager requestBySerializingRequest:<#(nonnull NSURLRequest *)#> withParameters:<#(nullable id)#> error:<#(NSError *__autoreleasing  _Nullable * _Nullable)#>]
+
 }
 
 #pragma mark collectionview delegate
@@ -179,28 +178,14 @@ AMapSearchDelegate>
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    DrivingCollectionViewCell *cell = (DrivingCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-//    cell.itemName.text = _collectionItems[indexPath.item][@"name"];
-    cell.itemName.text = @"search";
-    cell.itemImage.image = [UIImage imageNamed:_collectionItems[indexPath.item][@"image"]];
+    DrivingCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.itemName.text = self.collectionItems[indexPath.item][@"name"];
+    cell.itemIcon.text = self.collectionItems[indexPath.item][@"image"];
+    cell.itemIcon.textColor = self.collectionItems[indexPath.item][@"color"];
+    cell.itemIcon.backgroundColor = self.collectionItems[indexPath.item][@"bgcolor"];
     return cell;
 }
 
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return CGSizeMake(DEAppWidth/2 - 2, DEAppWidth/2 - 2);
-//}
-//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
-//{
-//    return 2;
-//}
-//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
-//{
-//    return 2;
-//}
-//- (UICollectionViewCell *)co
-
-#pragma mark collection delegate
     
 #pragma mark location delegate
 

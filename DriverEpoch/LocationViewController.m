@@ -70,7 +70,7 @@
     [reLocate addTarget:self action:@selector(reLocateClick) forControlEvents:UIControlEventTouchUpInside];
     [locationView addSubview:reLocate];
     
-    UILabel *headerLabelMore = [[UILabel alloc] initWithFrame:CGRectMake(15, 200, 200, 15)];
+    UILabel *headerLabelMore = [[UILabel alloc] initWithFrame:CGRectMake(15, 215, 200, 15)];
     headerLabelMore.font = [UIFont systemFontOfSize:15];
     headerLabelMore.textAlignment = NSTextAlignmentLeft;
     headerLabelMore.textColor = DEColor(101, 102, 103);
