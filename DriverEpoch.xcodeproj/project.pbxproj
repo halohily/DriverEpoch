@@ -19,15 +19,11 @@
 		08A9F9341EB3AC3A0039E381 /* AffairListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A9F9331EB3AC3A0039E381 /* AffairListCell.m */; };
 		08FC692B1E7418CA00D79F18 /* DERegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FC692A1E7418CA00D79F18 /* DERegisterViewController.m */; };
 		08FC692E1E7418D800D79F18 /* DELoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FC692D1E7418D800D79F18 /* DELoginViewController.m */; };
-		09F4611397C2F1CC770233C0 /* libPods-DriverEpochTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDA66505F866C3547CF57DE /* libPods-DriverEpochTests.a */; };
 		2C9DEB39854B608DAD5129E5 /* libPods-DriverEpoch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC111A2859BC4CCDE198049 /* libPods-DriverEpoch.a */; };
-		403AEB6CD460B60714F2CBE7 /* libPods-DriverEpochUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F593E86677E27E44B108E5 /* libPods-DriverEpochUITests.a */; };
 		4E10ABBC1E71339F00BCF21B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABBB1E71339F00BCF21B /* main.m */; };
 		4E10ABBF1E71339F00BCF21B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABBE1E71339F00BCF21B /* AppDelegate.m */; };
 		4E10ABC71E71339F00BCF21B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E10ABC61E71339F00BCF21B /* Assets.xcassets */; };
 		4E10ABCA1E71339F00BCF21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E10ABC81E71339F00BCF21B /* LaunchScreen.storyboard */; };
-		4E10ABD51E71339F00BCF21B /* DriverEpochTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABD41E71339F00BCF21B /* DriverEpochTests.m */; };
-		4E10ABE01E71339F00BCF21B /* DriverEpochUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABDF1E71339F00BCF21B /* DriverEpochUITests.m */; };
 		4E10ABEF1E713DE700BCF21B /* DETabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABEE1E713DE700BCF21B /* DETabBarController.m */; };
 		4E10ABF31E713E7300BCF21B /* DENavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABF21E713E7300BCF21B /* DENavigationController.m */; };
 		4E10ABF61E7143C200BCF21B /* DEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10ABF51E7143C200BCF21B /* DEViewController.m */; };
@@ -90,11 +86,7 @@
 		4E10ABC91E71339F00BCF21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E10ABCB1E71339F00BCF21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E10ABD01E71339F00BCF21B /* DriverEpochTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriverEpochTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E10ABD41E71339F00BCF21B /* DriverEpochTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DriverEpochTests.m; sourceTree = "<group>"; };
-		4E10ABD61E71339F00BCF21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E10ABDB1E71339F00BCF21B /* DriverEpochUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriverEpochUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E10ABDF1E71339F00BCF21B /* DriverEpochUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DriverEpochUITests.m; sourceTree = "<group>"; };
-		4E10ABE11E71339F00BCF21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E10ABED1E713DE700BCF21B /* DETabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DETabBarController.h; sourceTree = "<group>"; };
 		4E10ABEE1E713DE700BCF21B /* DETabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DETabBarController.m; sourceTree = "<group>"; };
 		4E10ABF11E713E7300BCF21B /* DENavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DENavigationController.h; sourceTree = "<group>"; };
@@ -112,9 +104,7 @@
 		4E10AC061E71569400BCF21B /* DrivingTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrivingTopView.m; sourceTree = "<group>"; };
 		4E10AC081E724CD900BCF21B /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		4E10AC091E724CD900BCF21B /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
-		67F593E86677E27E44B108E5 /* libPods-DriverEpochUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DriverEpochUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		758D4F97A52E549ACB3B54A7 /* Pods-DriverEpochUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverEpochUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DriverEpochUITests/Pods-DriverEpochUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8CDA66505F866C3547CF57DE /* libPods-DriverEpochTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DriverEpochTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC505DE0BB4EB00E1664063D /* Pods-DriverEpoch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverEpoch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriverEpoch/Pods-DriverEpoch.debug.xcconfig"; sourceTree = "<group>"; };
 		C627575FC3CCEE6550CECB13 /* Pods-DriverEpoch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverEpoch.release.xcconfig"; path = "Pods/Target Support Files/Pods-DriverEpoch/Pods-DriverEpoch.release.xcconfig"; sourceTree = "<group>"; };
 		DB8598C64748D2810126E6F3 /* Pods-DriverEpochTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverEpochTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriverEpochTests/Pods-DriverEpochTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,7 +123,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09F4611397C2F1CC770233C0 /* libPods-DriverEpochTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +130,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				403AEB6CD460B60714F2CBE7 /* libPods-DriverEpochUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,8 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				2DC111A2859BC4CCDE198049 /* libPods-DriverEpoch.a */,
-				8CDA66505F866C3547CF57DE /* libPods-DriverEpochTests.a */,
-				67F593E86677E27E44B108E5 /* libPods-DriverEpochUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,8 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				4E10ABB91E71339F00BCF21B /* DriverEpoch */,
-				4E10ABD31E71339F00BCF21B /* DriverEpochTests */,
-				4E10ABDE1E71339F00BCF21B /* DriverEpochUITests */,
 				4E10ABB81E71339F00BCF21B /* Products */,
 				9E5BEA0C1B7E7F8AFB67D60B /* Pods */,
 				1EB7AB0FD984AD48628145C3 /* Frameworks */,
@@ -215,24 +199,6 @@
 				4E10AC041E714FA700BCF21B /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4E10ABD31E71339F00BCF21B /* DriverEpochTests */ = {
-			isa = PBXGroup;
-			children = (
-				4E10ABD41E71339F00BCF21B /* DriverEpochTests.m */,
-				4E10ABD61E71339F00BCF21B /* Info.plist */,
-			);
-			path = DriverEpochTests;
-			sourceTree = "<group>";
-		};
-		4E10ABDE1E71339F00BCF21B /* DriverEpochUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4E10ABDF1E71339F00BCF21B /* DriverEpochUITests.m */,
-				4E10ABE11E71339F00BCF21B /* Info.plist */,
-			);
-			path = DriverEpochUITests;
 			sourceTree = "<group>";
 		};
 		4E10ABF01E713E0200BCF21B /* Main */ = {
@@ -623,7 +589,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E10ABD51E71339F00BCF21B /* DriverEpochTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,7 +596,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E10ABE01E71339F00BCF21B /* DriverEpochUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
