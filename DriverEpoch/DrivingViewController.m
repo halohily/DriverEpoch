@@ -10,6 +10,8 @@
 #import "LocationViewController.h"
 #import "DrivingCollectionViewCell.h"
 #import "AFNetworking.h"
+#import "DEPOIViewController.h"
+#import "WeatherController.h"
 
 #import <CoreLocation/CoreLocation.h>
 
@@ -153,10 +155,11 @@ AMapSearchDelegate>
         NSString *tmpStr = [now objectForKey:@"tmp"];
         
         NSLog(@"weather: %@,,, tmp: %@", weatherStr, tmpStr);
-        
-        self.topView.weatherLabel.text = weatherStr;
-        self.topView.temperatureLabel.text = [NSString stringWithFormat:@"%@°", tmpStr];
-    }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.topView.weatherLabel.text = weatherStr;
+            self.topView.temperatureLabel.text = [NSString stringWithFormat:@"%@°", tmpStr];
+        });
+            }
     failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull   error) {
              
              NSLog(@"%@",error);  //这里打印错误信息
@@ -186,7 +189,41 @@ AMapSearchDelegate>
     return cell;
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.item == 1 || indexPath.item == 6)
+    {
+        if (indexPath.item == 1){
+            NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"tel:110"];
+            UIWebView * callWebview = [[UIWebView alloc] init];
+            [callWebview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:str]]];
+            [self.view addSubview:callWebview];
+        }
+    }
+    else
+    {
+        DEPOIViewController *poiVC = [[DEPOIViewController alloc] init];
+        poiVC.location = self.nowCoordinate;
+        if (indexPath.item == 0){
+            poiVC.titleStr = @"加油站";
+        }
+        if (indexPath.item == 2){
+            poiVC.titleStr = @"停车场";
+        }
+        if (indexPath.item == 3){
+            poiVC.titleStr = @"汽车养护";
+        }
+        if (indexPath.item == 4){
+            poiVC.titleStr = @"汽车维修";
+        }
+        if (indexPath.item == 5){
+            poiVC.titleStr = @"汽车销售";
+        }
+        [self.navigationController pushViewController:poiVC animated:YES];
+    }
     
+}
+
 #pragma mark location delegate
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -236,6 +273,7 @@ AMapSearchDelegate>
         else{
             [[NSUserDefaults standardUserDefaults] setObject:address forKey:@"address"];
         }
+
     }
 }
 
@@ -282,12 +320,17 @@ AMapSearchDelegate>
 - (void)weatherInfo
 {
     NSLog(@"report!!!");
+    WeatherController *weatherVC = [[WeatherController alloc] init];
+    [self presentViewController:weatherVC animated:YES completion:nil];
 }
 #pragma mark setter
     
 - (void)setLocationStr:(NSString *)locationStr
 {
     _locationStr = locationStr;
-    self.topView.locationLabel.text = _locationStr;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.topView.locationLabel.text = _locationStr;
+    });
+    
 }
 @end

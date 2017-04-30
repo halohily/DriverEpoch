@@ -28,6 +28,11 @@
     {
         self.backgroundColor = [UIColor whiteColor];
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        UILabel *line = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, DEAppWidth, 0.5)];
+        line.backgroundColor = DEBGColorGray;
+        [self addSubview:line];
+        
         UILabel *icon = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, 20, 20)];
         icon.font = [UIFont fontWithName:@"iconfont" size:20];
         icon.textColor = DENavBarColorBlue;

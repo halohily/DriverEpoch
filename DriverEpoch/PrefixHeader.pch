@@ -20,7 +20,7 @@
 
 #define DENavBarColorBlack [UIColor colorWithRed:35/255.0f green:40/255.0f blue:46/255.0f alpha:1]
 #define DENavBarColorBlue [UIColor colorWithRed:40/255.0f green:158/255.0f blue:252/255.0f alpha:1]
-
+#define DEBGColorGray DEColor(234, 234, 234)
 #define PHYSICAL_1_PX (1.0f / [UIScreen mainScreen].scale)
 
 #endif /* PrefixHeader_pch */

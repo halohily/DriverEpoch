@@ -8,6 +8,8 @@ target 'DriverEpoch' do
      pod "SDWebImage"
      pod "MBProgressHUD"
      pod "AMapSearch"
+     pod "AMapNavi"
+     pod "AMapLocation"
   # Pods for DriverEpoch
 
   target 'DriverEpochTests' do

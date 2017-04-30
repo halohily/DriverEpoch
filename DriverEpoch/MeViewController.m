@@ -59,6 +59,7 @@
     list.scrollEnabled = NO;
     list.delegate = self;
     list.dataSource = self;
+    list.separatorStyle = UITableViewCellSeparatorStyleNone;
     [list registerClass:[AffairListCell class] forCellReuseIdentifier:@"affairCell"];
     [self.view addSubview:list];
     self.affairList = list;
@@ -110,9 +111,7 @@
 {
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEAppWidth, 10)];
     header.backgroundColor = DEColor(245, 245, 245);
-    UILabel *line = [[UILabel alloc] initWithFrame:CGRectMake(0, 9.5, DEAppWidth, 0.5)];
-    line.backgroundColor = DEColor(200, 199, 204);
-    [header addSubview:line];
+    
     return header;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

@@ -36,7 +36,7 @@
     locationView.backgroundColor = [UIColor clearColor];
     
     UILabel *locationIcon = [[UILabel alloc] init];
-    locationIcon.frame = CGRectMake(0, 0, 20, 20);
+    locationIcon.frame = CGRectMake(0, 0, 22, 22);
     locationIcon.font = [UIFont fontWithName:@"iconfont" size:20.0];
     locationIcon.text = @"\U0000e8ba";
     locationIcon.textColor = [UIColor whiteColor];
