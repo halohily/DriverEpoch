@@ -31,13 +31,15 @@
         [self.contentView addSubview:imageview];
         self.backImg = imageview;
         
-        UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(175, 20, DEAppWidth - 195, 30)];
+        UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(175, 15, DEAppWidth - 195, 40)];
         title.textAlignment = NSTextAlignmentLeft;
         title.font = [UIFont boldSystemFontOfSize:14.0];
+        title.lineBreakMode = NSLineBreakByWordWrapping;
+        title.numberOfLines = 0;
         [self.contentView addSubview:title];
         self.titleLabel = title;
         
-        UILabel *time = [[UILabel alloc] initWithFrame:CGRectMake(175, 70, 50, 10)];
+        UILabel *time = [[UILabel alloc] initWithFrame:CGRectMake(175, 70, 60, 10)];
         time.textAlignment = NSTextAlignmentLeft;
         time.font = [UIFont fontWithName:@"iconfont" size:10.0];
         time.textColor = [UIColor grayColor];

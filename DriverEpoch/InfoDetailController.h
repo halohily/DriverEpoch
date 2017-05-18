@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface InfoDetailController : UIViewController
-
+@property (nonatomic, copy) NSString *url;
 @end

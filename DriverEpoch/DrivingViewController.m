@@ -320,8 +320,8 @@ AMapSearchDelegate>
 - (void)weatherInfo
 {
     NSLog(@"report!!!");
-    WeatherController *weatherVC = [[WeatherController alloc] init];
-    [self presentViewController:weatherVC animated:YES completion:nil];
+//    WeatherController *weatherVC = [[WeatherController alloc] init];
+//    [self presentViewController:weatherVC animated:YES completion:nil];
 }
 #pragma mark setter
     

@@ -16,6 +16,7 @@
 {
     CGRect listFrame;
     CGRect listFullFrame;
+    BOOL showMap;
 }
 @property (nonatomic, strong) UITableView *poiList;
 @property (nonatomic, strong) AMapSearchAPI *search;
@@ -75,6 +76,7 @@
 
 - (void)initProperty
 {
+    showMap = YES;
     [self initloading];
     [self.view addSubview:self.loading];
     
@@ -85,15 +87,31 @@
     [AMapServices sharedServices].enableHTTPS = YES;
     ///初始化地图
     MAMapView *mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 0, DEAppWidth, 300)];
+    mapView.showsScale = NO;
+    mapView.showsCompass = NO;
+    mapView.logoCenter = CGPointMake(DEAppWidth - 50, 285);
     mapView.zoomLevel = 16;
     mapView.minZoomLevel = 14;
     mapView.maxZoomLevel = 17;
+    
     ///把地图添加至view
     [self.view insertSubview:mapView atIndex:0];
-
+    
     ///如果您需要进入地图就显示定位小蓝点，则需要下面两行代码
     mapView.showsUserLocation = YES;
     mapView.userTrackingMode = MAUserTrackingModeFollow;
+
+    UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(12, 30, 30, 30)];
+    backBtn.titleLabel.font = [UIFont fontWithName:@"iconfont" size:30.0];
+    
+    [backBtn setTitle:@"\U0000e604" forState:UIControlStateNormal];
+    backBtn.titleLabel.textColor = [UIColor whiteColor];
+    backBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
+    backBtn.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5];
+    backBtn.layer.cornerRadius = 15;
+    backBtn.layer.masksToBounds = YES;
+    [self.view insertSubview:backBtn aboveSubview:mapView];
+    [backBtn addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
     
     UITableView *list = [[UITableView alloc] init];
     list.delegate = self;
@@ -152,6 +170,8 @@
                 [UIView animateWithDuration:0.2 animations:^{
                     
                     NSLog(@"visible:::%@",dic);
+                    showMap = YES;
+                    self.navigationController.navigationBar.hidden = YES;
                     self.poiList.frame = listFrame;
                 }];
             }
@@ -160,6 +180,8 @@
         NSLog(@"tttt");
         if (self.poiList.frame.origin.y == 300){
             [UIView animateWithDuration:0.2 animations:^{
+                showMap = NO;
+                self.navigationController.navigationBar.hidden = NO;
                 self.poiList.frame = listFullFrame;
             }];
         }
@@ -172,6 +194,18 @@
     UIView *loadingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEAppWidth, DEAppHeight)];
     loadingView.backgroundColor = DEColor(245, 245, 245);
     
+    UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(12, 30, 30, 30)];
+    backBtn.titleLabel.font = [UIFont fontWithName:@"iconfont" size:30.0];
+    
+    [backBtn setTitle:@"\U0000e604" forState:UIControlStateNormal];
+    backBtn.titleLabel.textColor = [UIColor whiteColor];
+    backBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
+    backBtn.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5];
+    backBtn.layer.cornerRadius = 15;
+    backBtn.layer.masksToBounds = YES;
+    [loadingView addSubview:backBtn];
+    [backBtn addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
+
     UIImageView *logo = [[UIImageView alloc] initWithFrame:CGRectMake(DEAppWidth / 2 - 50, 200, 100, 100)];
     [logo setImage:[UIImage imageNamed:@"logo"]];
     [loadingView addSubview:logo];
@@ -229,9 +263,20 @@
     naviVC.endPoint = [AMapNaviPoint locationWithLatitude:self.response.pois[index].location.latitude longitude:self.response.pois[index].location.longitude];
     [self.navigationController pushViewController:naviVC animated:YES];
 }
--(void)viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationController.navigationBar.hidden = NO;
     self.title = self.titleStr;
+    if (!showMap){
+        self.navigationController.navigationBar.hidden = NO;
+    }
+    else{
+        self.navigationController.navigationBar.hidden = YES;
+    }
+    
+    
+}
+- (void)backClick
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
