@@ -147,6 +147,11 @@
     cell.delegate = self;
     cell.name.text = self.response.pois[indexPath.row].name;
     cell.location.text = self.response.pois[indexPath.row].address;
+    
+    if (indexPath.row == 0){
+        [cell.contentView addSubview:cell.datingBtn];
+    }
+    
     CGFloat distance = self.response.pois[indexPath.row].distance;
     if (distance/1000 >= 1){
         cell.distance.text = [NSString stringWithFormat:@"%.1f公里",distance/1000];
@@ -262,6 +267,11 @@
     naviVC.startPoint = [AMapNaviPoint locationWithLatitude:self.location.latitude longitude:self.location.longitude];
     naviVC.endPoint = [AMapNaviPoint locationWithLatitude:self.response.pois[index].location.latitude longitude:self.response.pois[index].location.longitude];
     [self.navigationController pushViewController:naviVC animated:YES];
+}
+
+- (void)date
+{
+    NSLog(@"1111");
 }
 - (void)viewWillAppear:(BOOL)animated
 {

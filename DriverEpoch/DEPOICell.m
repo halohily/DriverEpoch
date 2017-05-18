@@ -40,6 +40,17 @@
         name.textColor = [UIColor blackColor];
         [self.contentView addSubview:name];
         self.name = name;
+        UIView *date = [[UIView alloc] initWithFrame:CGRectMake(DEAppWidth * 0.6 + 16, 25, 20, 20)];
+        UILabel *dating = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+        dating.font = [UIFont fontWithName:@"iconfont" size:20.0];
+        dating.textAlignment = NSTextAlignmentCenter;
+        dating.textColor = DENavBarColorBlue;
+        dating.text = @"\U0000e601";
+        [date addSubview:dating];
+        UITapGestureRecognizer *datingClick = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(datingClick)];
+        [date addGestureRecognizer:datingClick];
+//        [self.contentView addSubview:dating];
+        self.datingBtn = date;
         
         UILabel *distance = [[UILabel alloc] initWithFrame:CGRectMake(15, 64, 50, 14)];
         distance.textAlignment = NSTextAlignmentLeft;
@@ -104,5 +115,11 @@
 {
     [self.delegate respondsToSelector:@selector(naviForIndex:)];
     [self.delegate naviForIndex:self.index];
+}
+- (void)datingClick
+{
+    NSLog(@"date");
+    [self.delegate respondsToSelector:@selector(date)];
+    [self.delegate date];
 }
 @end
