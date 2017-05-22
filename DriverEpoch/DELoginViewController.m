@@ -185,6 +185,9 @@
                       
                       [[NSUserDefaults standardUserDefaults] synchronize];
                       
+                      NSNotification *postAddPlaceNotice = [[NSNotification alloc] initWithName:@"postAddPlace" object:nil userInfo:nil];
+                      [[NSNotificationCenter defaultCenter] postNotification:postAddPlaceNotice];
+                      [[NSNotificationCenter defaultCenter] postNotificationName:@"addOrderStates" object:nil];
                       [self dismissViewControllerAnimated:YES completion:NULL];
                   }
                   else{

@@ -83,6 +83,15 @@
     [self addSubview:weatherInfo];
     self.weatherInfos = weatherInfo;
     
+    UILabel *notis = [[UILabel alloc] initWithFrame:CGRectMake(DEAppWidth * 0.85 + 26, 40, 10, 10)];
+    notis.backgroundColor = [UIColor redColor];
+    notis.textColor = [UIColor whiteColor];
+    notis.textAlignment = NSTextAlignmentCenter;
+    notis.font = [UIFont systemFontOfSize:8.0];
+    notis.layer.cornerRadius = 5.0;
+    notis.layer.masksToBounds = YES;
+    [self addSubview:notis];
+    self.notisNum = notis;
 }
 -(void)reLocatingClick:(UIButton *)sender
 {

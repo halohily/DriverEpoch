@@ -12,7 +12,7 @@
 #import "AFNetworking.h"
 #import "DEPOIViewController.h"
 #import "WeatherController.h"
-
+#import "NotisController.h"
 #import <CoreLocation/CoreLocation.h>
 
 
@@ -40,7 +40,7 @@ AMapSearchDelegate>
 
 @property (nonatomic, strong) NSString *weatherKey;
 @property (nonatomic, strong) NSMutableDictionary *weatherDic;
-
+@property (nonatomic, assign) NSUInteger ordersCount;
 @end
 
 @implementation DrivingViewController
@@ -53,7 +53,7 @@ AMapSearchDelegate>
     [self initProperty];
     [self setupView];
     [self locate];
-    
+    [self checkOrders];
 }
 
 - (void)initData
@@ -73,28 +73,30 @@ AMapSearchDelegate>
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeAddress) name:@"changeAddress" object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postAddPlace) name:@"postAddPlace" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addOrders) name:@"addOrderStates" object:nil];
     self.weatherKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"weather_key"];
 }
 - (void)locate
 {
-    if(TARGET_IPHONE_SIMULATOR)
-    {
-        //    纬度:39.958186 经度:116.306107
-        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(39.958186, 116.306107);
-        AMapCoordinateType type = AMapCoordinateTypeGPS;
-        _nowCoordinate = AMapCoordinateConvert(CLLocationCoordinate2DMake(coordinate.latitude,coordinate.longitude), type);
-        [self reverseGeoCode];
-    }
-    else
-    {
-        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-            NSLog(@"requestWhenInUseAuthorization");
-            [self.locationManager requestWhenInUseAuthorization];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        if(TARGET_IPHONE_SIMULATOR)
+        {
+            //    纬度:39.958186 经度:116.306107
+            CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(39.958186, 116.306107);
+            AMapCoordinateType type = AMapCoordinateTypeGPS;
+            _nowCoordinate = AMapCoordinateConvert(CLLocationCoordinate2DMake(coordinate.latitude,coordinate.longitude), type);
+            [self reverseGeoCode];
         }
-        [self.locationManager startUpdatingLocation];
-    }
-    
+        else
+        {
+            if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+                NSLog(@"requestWhenInUseAuthorization");
+                [self.locationManager requestWhenInUseAuthorization];
+            }
+            [self.locationManager startUpdatingLocation];
+        }
+    });
 }
 
 - (void)setupView
@@ -146,39 +148,38 @@ AMapSearchDelegate>
 
 - (void)updateWeather
 {
-    NSString *url = @"https://free-api.heweather.com/v5/now";
-//    NSURL *url = [NSURL URLWithString:@"https://free-api.heweather.com/v5/now"];
-    
-    NSString *city = self.locationDic.addressComponent.city;
-    NSDictionary *parameters = @{@"city": city, @"key": self.weatherKey};
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:url parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *url = @"https://free-api.heweather.com/v5/now";
+        //    NSURL *url = [NSURL URLWithString:@"https://free-api.heweather.com/v5/now"];
         
-    }
-    success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             
-             NSLog(@"这里打印请求成功要做的事");
-        NSLog(@"%@",responseObject);
-        NSMutableArray *HeWeather = [responseObject objectForKey:@"HeWeather5"];
-        NSMutableDictionary *object = [HeWeather objectAtIndex:0];
-        NSMutableDictionary *now = [object objectForKey:@"now"];
-        NSMutableDictionary *con = [now objectForKey:@"cond"];
-        NSString *weatherStr = [con objectForKey:@"txt"];
-        
-        NSString *tmpStr = [now objectForKey:@"tmp"];
-        
-        NSLog(@"weather: %@,,, tmp: %@", weatherStr, tmpStr);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.topView.weatherLabel.text = weatherStr;
-            self.topView.temperatureLabel.text = [NSString stringWithFormat:@"%@°", tmpStr];
-        });
-            }
-    failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull   error) {
-             
-             NSLog(@"%@",error);  //这里打印错误信息
-             
-    }];
-
+        NSString *city = self.locationDic.addressComponent.city;
+        NSDictionary *parameters = @{@"city": city, @"key": self.weatherKey};
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        [manager GET:url parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        }
+             success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                 
+                 NSLog(@"这里打印请求成功要做的事");
+                 NSLog(@"%@",responseObject);
+                 NSMutableArray *HeWeather = [responseObject objectForKey:@"HeWeather5"];
+                 NSMutableDictionary *object = [HeWeather objectAtIndex:0];
+                 NSMutableDictionary *now = [object objectForKey:@"now"];
+                 NSMutableDictionary *con = [now objectForKey:@"cond"];
+                 NSString *weatherStr = [con objectForKey:@"txt"];
+                 
+                 NSString *tmpStr = [now objectForKey:@"tmp"];
+                 
+                 NSLog(@"weather: %@,,, tmp: %@", weatherStr, tmpStr);
+                 dispatch_async(dispatch_get_main_queue(), ^{
+                     self.topView.weatherLabel.text = weatherStr;
+                     self.topView.temperatureLabel.text = [NSString stringWithFormat:@"%@°", tmpStr];
+                 });
+             }
+             failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull   error) {
+                 NSLog(@"%@",error);  //这里打印错误信息
+             }];
+    });
 }
 
 #pragma mark collectionview delegate
@@ -289,7 +290,7 @@ AMapSearchDelegate>
         else{
             [[NSUserDefaults standardUserDefaults] setObject:address forKey:@"address"];
         }
-
+        [self postAddPlace];
     }
 }
 
@@ -338,6 +339,8 @@ AMapSearchDelegate>
     NSLog(@"report!!!");
 //    WeatherController *weatherVC = [[WeatherController alloc] init];
 //    [self presentViewController:weatherVC animated:YES completion:nil];
+    NotisController *notisVC = [[NotisController alloc] init];
+    [self.navigationController pushViewController:notisVC animated:YES];
 }
 #pragma mark setter
     
@@ -348,5 +351,73 @@ AMapSearchDelegate>
         self.topView.locationLabel.text = _locationStr;
     });
     
+}
+- (void)postAddPlace
+{
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"id"];
+    
+    if (user_id && ![self.locationStr isEqualToString:@""]){
+        
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            NSString *latitude = [NSString stringWithFormat:@"%f", self.nowCoordinate.latitude];
+            NSString *longitude = [NSString stringWithFormat:@"%f", self.nowCoordinate.longitude];
+            
+            NSDictionary *parameters = @{@"if": @"AddPlace",@"user_id":user_id, @"latitude": latitude, @"longitude": longitude, @"place_name": self.locationStr, @"place_address": self.locationDic.formattedAddress};
+            AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+            [manager POST:SERVER_ADDRESS parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+                
+            }
+                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                      NSLog(@"地理位置添加成功");
+                      
+                  }
+                  failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull   error) {
+                      
+                      NSLog(@"地理位置添加失败");  //这里打印错误信息
+                  }];
+        });
+    }
+    else{
+        NSLog(@"add place failed, because user_id of address doesn't exists");
+    }
+}
+
+-(void)checkOrders
+{
+    NSMutableArray *orders = [[NSUserDefaults standardUserDefaults] objectForKey:@"orderStates"];
+    self.ordersCount = orders.count;
+    if (self.ordersCount == 0){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.topView.notisNum.hidden = YES;
+        });
+        
+    }
+    else{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.topView.notisNum.hidden = NO;
+            self.topView.notisNum.text = [NSString stringWithFormat:@"%lu", self.ordersCount];
+        });
+        
+    }
+}
+- (void)addOrders
+{
+    NSMutableArray *orders = [[NSUserDefaults standardUserDefaults] objectForKey:@"orderStates"];
+    if(orders && orders.count >= self.ordersCount){
+        NSLog(@"added nums::::::: %lu", orders.count - self.ordersCount);
+        self.ordersCount = orders.count;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.topView.notisNum.hidden = NO;
+            self.topView.notisNum.text = [NSString stringWithFormat:@"%lu", self.ordersCount];
+        });
+    }
+    else
+    {
+        if (orders.count == 0){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.topView.notisNum.hidden = YES;
+            });
+        }
+    }
 }
 @end

@@ -14,6 +14,9 @@
 #import "HistoryPlacesController.h"
 #import "OrdersController.h"
 #import "PointsController.h"
+#import "SDImageCache.h"
+#import "SDWebImageManager.h"
+#import "MBProgressHUD.h"
 @interface MeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UIImageView *carImage;
@@ -108,7 +111,15 @@
     {
         cell.affair.text = self.settingArr[indexPath.row][@"affair"];
         cell.affairIcon.text = self.settingArr[indexPath.row][@"icon"];
-        cell.holderLabel.text = self.settingArr[indexPath.row][@"holder"];
+        if (indexPath.row == 0){
+            NSUInteger cacheSize = [[SDImageCache sharedImageCache] getSize];
+            if (cacheSize/1024.0 >= 1.0){
+                cell.holderLabel.text = [NSString stringWithFormat:@"%.2fM", cacheSize/1024.0/1024.0];
+            }
+            else{
+                cell.holderLabel.text = [NSString stringWithFormat:@"%.2fK", cacheSize/1024.0];
+            }
+        }
     }
     
     return cell;
@@ -133,6 +144,7 @@
             [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"nickname"];
             [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"id"];
             [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"car"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"orderStates"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             DELoginViewController *loginVC = [[DELoginViewController alloc] init];
             [self presentViewController:loginVC animated:YES completion:^{
@@ -147,6 +159,19 @@
             }];
         }]];
         [self presentViewController:alert animated:YES completion:nil];
+
+    }
+    if (indexPath.section == 1 && indexPath.row == 0){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeIndeterminate;
+        hud.label.text = @"请稍候";
+        [hud hideAnimated:YES afterDelay:0.2];
+        [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
+            [[SDImageCache sharedImageCache] clearMemory];
+            [self refreshCache];
+        }];
+        
 
     }
     if (indexPath.section == 0 && indexPath.row == 2){
@@ -172,5 +197,16 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 10;
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self refreshCache];
+}
+- (void)refreshCache
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSIndexPath *refreshIndex = [NSIndexPath indexPathForRow:0 inSection:1];
+        [self.affairList reloadRowsAtIndexPaths:[NSArray arrayWithObjects:refreshIndex,nil] withRowAnimation:UITableViewRowAnimationNone];
+    });
 }
 @end

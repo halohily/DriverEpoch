@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSArray *proTimeList;
 @property (nonatomic, strong) UILabel *dateLabel;
 @property (nonatomic, strong) UILabel *dateIcon;
+@property (nonatomic, strong) UIView *postView;
 @end
 
 @implementation DateController
@@ -73,6 +74,7 @@
     postDate.layer.cornerRadius = 5.0;
     postDate.layer.masksToBounds = YES;
     [self.view addSubview:postDate];
+    self.postView = postDate;
     
     UILabel *beforePost = [[UILabel alloc] initWithFrame:CGRectMake(60, 7, 80, 26)];
     beforePost.textColor = [UIColor whiteColor];
@@ -128,7 +130,11 @@
                   hud.mode = MBProgressHUDModeText;
                   hud.label.text = @"预约发送成功！";
                   [hud hideAnimated:YES afterDelay:2.0];
+                  NSMutableDictionary *data = [responseObject objectForKey:@"data"];
+                  NSString *orderID = [data objectForKey:@"id"];
+                  [self performSelector:@selector(checkStateWithID:) withObject:orderID/*可传任意类型参数*/ afterDelay:5.0];
                   dispatch_async(dispatch_get_main_queue(), ^{
+                      [[self.postView.gestureRecognizers objectAtIndex:0] removeTarget:self action:@selector(postDate)];
                       self.dateLabel.text = @"预约中";
                       
                       CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
@@ -191,5 +197,37 @@
 -(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     return [_proTimeList objectAtIndex:row];
+}
+- (void)checkStateWithID:(NSString *)orderID{
+    NSLog(@"ayayayayayay！！！");
+    NSDictionary *parameters = @{@"if": @"CheckOrderState",@"id":orderID};
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager POST:SERVER_ADDRESS parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    }
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+              NSLog(@"订单状态检查成功");
+              NSLog(@"%@", responseObject);
+              NSDictionary *tempDic = @{@"name": [self.vcData objectForKey:@"name"], @"address": [self.vcData objectForKey:@"address"], @"state": [responseObject objectForKey:@"data"][@"state"]};
+              
+              NSArray *commonArr = [[NSUserDefaults standardUserDefaults] objectForKey:@"orderStates"];
+              if (commonArr){
+                  NSMutableArray *tempArr = [[NSMutableArray alloc] initWithArray:commonArr];
+                  [tempArr addObject:tempDic];
+                  [[NSUserDefaults standardUserDefaults] setObject:tempArr forKey:@"orderStates"];
+              }
+              else{
+                  NSMutableArray *arr = [[NSMutableArray alloc] init];
+                  [arr addObject:tempDic];
+                  [[NSUserDefaults standardUserDefaults] setObject:arr forKey:@"orderStates"];
+              }
+              [[NSUserDefaults standardUserDefaults] synchronize];
+              [[NSNotificationCenter defaultCenter] postNotificationName:@"addOrderStates" object:nil];
+          }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull   error) {
+              
+              NSLog(@"订单状态检查失败失败");  //这里打印错误信息
+          }];
+
 }
 @end

@@ -35,6 +35,7 @@
 @property (nonatomic, strong) UILabel *weatherLabel;
 @property (nonatomic, strong) UIButton *weatherInfos;
 @property (nonatomic, strong) UIView *locationBtn;
+@property (nonatomic, strong) UILabel *notisNum;
 - (instancetype)initWithFrame:(CGRect)frame;
 
 @end

@@ -15,6 +15,7 @@
 		082DBD181ED1F4AE00CD7814 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 082DBD171ED1F4AE00CD7814 /* OrderCell.m */; };
 		082DBD1A1ED1F6A000CD7814 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 082DBD191ED1F69500CD7814 /* iconfont.ttf */; };
 		082DBD1D1ED1FE0A00CD7814 /* PointsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082DBD1C1ED1FE0A00CD7814 /* PointsController.m */; };
+		082DBD201ED2F73400CD7814 /* NotisController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082DBD1F1ED2F73400CD7814 /* NotisController.m */; };
 		08339E151E7560BA005DABBA /* DrivingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08339E141E7560BA005DABBA /* DrivingCollectionViewCell.m */; };
 		08A0C43A1EB5A1000082C079 /* DEPOIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A0C4391EB5A1000082C079 /* DEPOIViewController.m */; };
 		08A0C43D1EB5A9200082C079 /* DEPOICell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A0C43C1EB5A9200082C079 /* DEPOICell.m */; };
@@ -76,6 +77,8 @@
 		082DBD191ED1F69500CD7814 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		082DBD1B1ED1FE0A00CD7814 /* PointsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointsController.h; sourceTree = "<group>"; };
 		082DBD1C1ED1FE0A00CD7814 /* PointsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointsController.m; sourceTree = "<group>"; };
+		082DBD1E1ED2F73400CD7814 /* NotisController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotisController.h; sourceTree = "<group>"; };
+		082DBD1F1ED2F73400CD7814 /* NotisController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotisController.m; sourceTree = "<group>"; };
 		08339E131E7560BA005DABBA /* DrivingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrivingCollectionViewCell.h; sourceTree = "<group>"; };
 		08339E141E7560BA005DABBA /* DrivingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrivingCollectionViewCell.m; sourceTree = "<group>"; };
 		08A0C4381EB5A1000082C079 /* DEPOIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEPOIViewController.h; sourceTree = "<group>"; };
@@ -261,6 +264,8 @@
 				08A0C4461EB65AB60082C079 /* NaviController.m */,
 				08A45B6D1ECDC1A400DC8E8E /* DateController.h */,
 				08A45B6E1ECDC1A400DC8E8E /* DateController.m */,
+				082DBD1E1ED2F73400CD7814 /* NotisController.h */,
+				082DBD1F1ED2F73400CD7814 /* NotisController.m */,
 			);
 			name = Driving;
 			sourceTree = "<group>";
@@ -624,6 +629,7 @@
 				08028B8C1ED0437D0060A7F1 /* UserViewController.m in Sources */,
 				4E10ABBC1E71339F00BCF21B /* main.m in Sources */,
 				4E10AC071E71569400BCF21B /* DrivingTopView.m in Sources */,
+				082DBD201ED2F73400CD7814 /* NotisController.m in Sources */,
 				4E10AC0A1E724CD900BCF21B /* LocationViewController.m in Sources */,
 				08A0C43D1EB5A9200082C079 /* DEPOICell.m in Sources */,
 				08A45B6F1ECDC1A400DC8E8E /* DateController.m in Sources */,
