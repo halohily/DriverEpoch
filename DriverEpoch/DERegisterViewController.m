@@ -141,9 +141,7 @@
         NSString *str2 = confirmpassword.text;
         if(![str1 isEqualToString:str2])
         {
-//            UIAlertController *ConfirmFailureAlert = [[UIAlertController alloc] initWithTitle:@"确认失败" message:@"两次输入的密码不一致" delegate:self cancelButtonTitle:@"再试一次" otherButtonTitles: nil];
             self.flag = [NSNumber numberWithInt:1];
-//            [ConfirmFailureAlert show];
             confirmpassword.text = nil;
         }
     }
@@ -164,18 +162,6 @@
     [username resignFirstResponder];
     [password resignFirstResponder];
     [confirmpassword resignFirstResponder];
-    //    if(confirmpassword.isFirstResponder)
-    //    {
-    //        NSString *str1 = password.text;
-    //        NSString *str2 = confirmpassword.text;
-    //        if(![str1 isEqualToString:str2])
-    //        {
-    //            UIAlertView *ConfirmFailureAlert = [[UIAlertView alloc] initWithTitle:@"确认失败" message:@"两次输入的密码不一致" delegate:self cancelButtonTitle:@"再试一次" otherButtonTitles: nil];
-    //            self.flag = [NSNumber numberWithInt:1];
-    //            [ConfirmFailureAlert show];
-    //            confirmpassword.text = nil;
-    //        }
-    //    }
 }
 -(IBAction)PushRegister:(id)sender
 {
@@ -267,14 +253,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

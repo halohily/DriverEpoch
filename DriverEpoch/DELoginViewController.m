@@ -46,7 +46,7 @@
     username.autocorrectionType = UITextAutocorrectionTypeNo;
     username.autocapitalizationType = UITextAutocapitalizationTypeNone;
     username.clearButtonMode = UITextFieldViewModeWhileEditing;
-    //    [username becomeFirstResponder];
+    
     [whiteView addSubview:username];
     
     password = [[UITextField alloc] initWithFrame:CGRectMake(DEAppWidth * 0.04, 40, DEAppWidth * 0.84, 40)];
@@ -212,82 +212,8 @@
                   hud.mode = MBProgressHUDModeText;
                   hud.label.text = @"网络错误！";
                   [hud hideAnimated:YES afterDelay:1.0];
-              }];        
-
-//        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//        NSDictionary *parameters = @{@"if":@"Login",
-//                                     @"username":name,
-//                                     @"password":word,
-//                                     @"type":self.mytype
-//                                     };
-//        NSLog(@"%@",parameters);
-//        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json",@"text/plain",@"text/html", @"text/javascript", nil];
-//        [manager POST:SERVER_IP parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            NSLog(@"JSON: %@", responseObject);
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            NSLog(@"json  %@",responseObject);
-//            NSNumber *code = [responseObject objectForKey:@"code"];
-//            if (code.intValue == 1)
-//            {
-//                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//                hud.mode = MBProgressHUDModeText;
-//                hud.labelText = @"登录成功！";
-//                [hud hide:YES afterDelay:2];
-//                NSMutableDictionary *singledic = [responseObject objectForKey:@"data"];
-//                
-//                // 存userdata
-//                if ([self.mytype isEqualToString:@"user"]) {// 用户
-//                    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
-//                    [userInfo setValue:[singledic objectForKey:@"id"] forKey:@"user_id"];
-//                    [userInfo setValue:[singledic objectForKey:@"user_name"] forKey:@"user_name"];
-//                    [userInfo setValue:[singledic objectForKey:@"icon"] forKey:@"icon"];
-//                    [userInfo setValue:[singledic objectForKey:@"tel"] forKey:@"tel"];
-//                    [userInfo setValue:[singledic objectForKey:@"address"] forKey:@"address"];
-//                    [[UserData getUserInfo] saveUserInfo:userInfo];
-//                }
-//                if ([self.mytype isEqualToString:@"designer"]) {// 设计师
-//                    NSMutableDictionary *designerInfo = [[NSMutableDictionary alloc] init];
-//                    [designerInfo setValue:[singledic objectForKey:@"id"] forKey:@"designer_id"];
-//                    [[UserData getUserInfo] saveDesignerInfo:designerInfo];
-//                }
-//                // 显示主界面
-//                AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-//                [appDelegate loadTabBarControllers];
-//                [[NSNotificationCenter defaultCenter] postNotificationName:EP_LOGIN object:nil];
-//                [self dismissViewControllerAnimated:YES completion:^{}];
-//            }
-//            
-//            else{
-//                [MBProgressHUD hideHUDForView:self.view animated:YES];
-//                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//                hud.mode = MBProgressHUDModeText;
-//                hud.labelText = @"登录失败!";
-//                [hud hide:YES afterDelay:2];
-//                username.text = nil;
-//                password.text = nil;
-//                [username resignFirstResponder];
-//                [password resignFirstResponder];
-//            }
-//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//            NSLog(@"Error: %@", error);
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//            hud.mode = MBProgressHUDModeText;
-//            hud.labelText = @"网络错误！";
-//            [hud hide:YES afterDelay:1];
-//            
-//        }];
+              }];
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
