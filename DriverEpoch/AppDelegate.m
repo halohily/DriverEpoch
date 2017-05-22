@@ -71,12 +71,18 @@
 - (void)setupWindow
 {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[DETabBarController alloc] init];
+    DETabBarController *tabbar = [[DETabBarController alloc] init];
+    self.window.rootViewController = tabbar;
+    self.tabbarVC = tabbar;
     [self.window makeKeyAndVisible];
     
-    DELoginViewController *login = [[DELoginViewController alloc] init];
-    DENavigationController *loginNav = [[DENavigationController alloc] initWithRootViewController:login];
-    loginNav.navigationBar.hidden = YES;
-    [self.window.rootViewController presentViewController:loginNav animated:YES completion:NULL];
+    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+    if (!username){
+        DELoginViewController *login = [[DELoginViewController alloc] init];
+        DENavigationController *loginNav = [[DENavigationController alloc] initWithRootViewController:login];
+        loginNav.navigationBar.hidden = YES;
+        [self.window.rootViewController presentViewController:loginNav animated:YES completion:NULL];
+    }
+    
 }
 @end

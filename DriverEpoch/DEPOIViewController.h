@@ -15,5 +15,5 @@
 
 @property (nonatomic, strong) NSString *titleStr;
 @property (nonatomic, assign) CLLocationCoordinate2D location;
-
+@property (nonatomic, assign) BOOL canDate;
 @end

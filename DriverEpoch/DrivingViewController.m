@@ -58,7 +58,8 @@ AMapSearchDelegate>
 
 - (void)initData
 {
-    NSArray *itemArr = @[@{@"name": @"加油站", @"image": @"\U0000e64b", @"color": [UIColor redColor], @"bgcolor": DEColor(151, 225, 138)}, @{@"name": @"紧急呼救", @"image": @"\U0000e61b", @"color": [UIColor redColor], @"bgcolor": DEColor(242, 176, 163)}, @{@"name": @"停车场", @"image": @"\U0000e608", @"color": DEColor(255, 233, 35), @"bgcolor": DEColor(108, 209, 253)}, @{@"name": @"养护爱车", @"image": @"\U0000e875", @"color": DEColor(231, 226, 47), @"bgcolor": DENavBarColorBlue}, @{@"name": @"汽车维修", @"image": @"\U0000e6a5", @"color": DEColor(108, 209, 253), @"bgcolor": DEColor(242, 176, 163)}, @{@"name": @"汽车销售", @"image": @"\U0000e613", @"color": [UIColor yellowColor], @"bgcolor": DEColor(151, 225, 138)}, @{@"name": @"限行查询", @"image": @"\U0000e60b", @"color": DEColor(101, 101, 101), @"bgcolor": DEColor(249, 239, 192)}];
+    NSArray *itemArr = @[@{@"name": @"加油站", @"image": @"\U0000e64b", @"color": [UIColor redColor], @"bgcolor": DEColor(151, 225, 138)}, @{@"name": @"紧急呼救", @"image": @"\U0000e61b", @"color": [UIColor redColor], @"bgcolor": DEColor(242, 176, 163)}, @{@"name": @"停车场", @"image": @"\U0000e608", @"color": DEColor(255, 233, 35), @"bgcolor": DEColor(108, 209, 253)}, @{@"name": @"养护爱车", @"image": @"\U0000e875", @"color": DEColor(231, 226, 47), @"bgcolor": DENavBarColorBlue}, @{@"name": @"汽车维修", @"image": @"\U0000e6a5", @"color": DEColor(108, 209, 253), @"bgcolor": DEColor(242, 176, 163)}, @{@"name": @"汽车销售", @"image": @"\U0000e613", @"color": [UIColor yellowColor], @"bgcolor": DEColor(151, 225, 138)}];
+//    @{@"name": @"限行查询", @"image": @"\U0000e60b", @"color": DEColor(101, 101, 101), @"bgcolor": DEColor(249, 239, 192)}
     self.collectionItems = itemArr;
 }
 
@@ -77,11 +78,23 @@ AMapSearchDelegate>
 }
 - (void)locate
 {
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        NSLog(@"requestWhenInUseAuthorization");
-        [self.locationManager requestWhenInUseAuthorization];
+    if(TARGET_IPHONE_SIMULATOR)
+    {
+        //    纬度:39.958186 经度:116.306107
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(39.958186, 116.306107);
+        AMapCoordinateType type = AMapCoordinateTypeGPS;
+        _nowCoordinate = AMapCoordinateConvert(CLLocationCoordinate2DMake(coordinate.latitude,coordinate.longitude), type);
+        [self reverseGeoCode];
     }
-    [self.locationManager startUpdatingLocation];
+    else
+    {
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            NSLog(@"requestWhenInUseAuthorization");
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+        [self.locationManager startUpdatingLocation];
+    }
+    
 }
 
 - (void)setupView
@@ -204,13 +217,16 @@ AMapSearchDelegate>
     {
         DEPOIViewController *poiVC = [[DEPOIViewController alloc] init];
         poiVC.location = self.nowCoordinate;
+        poiVC.canDate = NO;
         if (indexPath.item == 0){
             poiVC.titleStr = @"加油站";
+            poiVC.canDate = YES;
         }
         if (indexPath.item == 2){
             poiVC.titleStr = @"停车场";
         }
         if (indexPath.item == 3){
+            poiVC.canDate = YES;
             poiVC.titleStr = @"汽车养护";
         }
         if (indexPath.item == 4){
@@ -233,7 +249,7 @@ AMapSearchDelegate>
     CLLocation *location = [locations lastObject];
     CLLocationCoordinate2D coordinate = location.coordinate;
     NSLog(@"纬度:%f 经度:%f", coordinate.latitude, coordinate.longitude);
-   
+
     [self reverseGeoCode];
     
     AMapCoordinateType type = AMapCoordinateTypeGPS;

@@ -10,7 +10,7 @@
 #import "DERegisterViewController.h"
 #import "AppDelegate.h"
 #import "MBProgressHUD.h"
-
+#import "AFNetworking.h"
 @interface DELoginViewController ()
 
 @end
@@ -82,26 +82,8 @@
     [GotoRegister setTitleColor:[UIColor colorWithRed:107/255.0 green:107/255.0 blue:118/255.0 alpha:1] forState:UIControlStateNormal];
     [GotoRegister addTarget:self action:@selector(gotoRegisterViewController:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:GotoRegister];
-    mytype = @"user";
+    
 
-}
-
-- (IBAction)ClickUser:(id)sender
-{
-    [User setBackgroundColor:UIColorFromHEX(0xa6a6a6)];
-    [User setTitleColor:UIColorFromHEX(0xf2f2f4) forState:UIControlStateNormal];
-    [Designer setBackgroundColor:UIColorFromHEX(0xf2f2f4)];
-    [Designer setTitleColor:UIColorFromHEX(0xa6a6a6) forState:UIControlStateNormal];
-    mytype = @"user";
-}
-
-- (IBAction)ClickDesigner:(id)sender
-{
-    [Designer setBackgroundColor:UIColorFromHEX(0xa6a6a6)];
-    [Designer setTitleColor:UIColorFromHEX(0xf2f2f4) forState:UIControlStateNormal];
-    [User setBackgroundColor:UIColorFromHEX(0xf2f2f4)];
-    [User setTitleColor:UIColorFromHEX(0xa6a6a6) forState:UIControlStateNormal];
-    mytype = @"designer";
 }
 
 - (IBAction)gotoRegisterViewController:(id)sender
@@ -161,23 +143,74 @@
 }
 - (IBAction)Loginclicked:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:NULL];
     if([username.text  isEqual: @""] || [password.text  isEqual: @""])
     {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeText;
         hud.label.text = @"请填写完整！";
-        [hud hideAnimated:YES afterDelay:2.0];
+        [hud hideAnimated:YES afterDelay:1.0];
     }
     else
     {
         NSString *name = username.text;
         NSString *word = password.text;
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeIndeterminate;
         hud.label.text = @"加载中";
         [hud hideAnimated:YES afterDelay:5.0];
         
+        NSDictionary *parameters = @{@"if": @"Login", @"username": name, @"password":word};
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        [manager POST:SERVER_ADDRESS parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        }
+              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                  NSLog(@"%@", responseObject);
+                  NSNumber *code = [responseObject objectForKey:@"code"];
+                  if (code.intValue == 1)
+                  {
+                      [MBProgressHUD hideHUDForView:self.view animated:YES];
+                      MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                      hud.mode = MBProgressHUDModeText;
+                      hud.label.text = @"登录成功！";
+                      [hud hideAnimated:YES afterDelay:2.0];
+                      NSMutableDictionary *singledic = [responseObject objectForKey:@"data"];
+                      
+                      [[NSUserDefaults standardUserDefaults] setObject:[singledic objectForKey:@"username"] forKey:@"username"];
+                      [[NSUserDefaults standardUserDefaults] setObject:[singledic objectForKey:@"nickname"] forKey:@"nickname"];
+                      [[NSUserDefaults standardUserDefaults] setObject:[singledic objectForKey:@"id"] forKey:@"id"];
+                      [[NSUserDefaults standardUserDefaults] setObject:[singledic objectForKey:@"car"] forKey:@"car"];
+                      
+                      [[NSUserDefaults standardUserDefaults] synchronize];
+                      
+                      [self dismissViewControllerAnimated:YES completion:NULL];
+                  }
+                  else{
+                      
+                      [MBProgressHUD hideHUDForView:self.view animated:YES];
+                      MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                      hud.mode = MBProgressHUDModeText;
+                      hud.label.text = @"登录失败";
+                      [hud hideAnimated:YES afterDelay:1];
+                      username.text = nil;
+                      password.text = nil;
+                      [username resignFirstResponder];
+                      [password resignFirstResponder];
+                  }
+                  
+              }
+              failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull   error) {
+                  
+                  NSLog(@"%@",error);  //这里打印错误信息
+                  [MBProgressHUD hideHUDForView:self.view animated:YES];
+                  MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                  hud.mode = MBProgressHUDModeText;
+                  hud.label.text = @"网络错误！";
+                  [hud hideAnimated:YES afterDelay:1.0];
+              }];        
+
 //        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 //        NSDictionary *parameters = @{@"if":@"Login",
 //                                     @"username":name,

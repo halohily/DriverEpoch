@@ -23,4 +23,5 @@
 #define DEBGColorGray DEColor(234, 234, 234)
 #define PHYSICAL_1_PX (1.0f / [UIScreen mainScreen].scale)
 
+#define SERVER_ADDRESS [NSString stringWithFormat:@"http://120.25.82.73/DriverEpoch-Server/receiver.php"]
 #endif /* PrefixHeader_pch */

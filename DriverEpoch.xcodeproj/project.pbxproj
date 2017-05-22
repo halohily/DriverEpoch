@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08028B8C1ED0437D0060A7F1 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08028B8B1ED0437D0060A7F1 /* UserViewController.m */; };
+		082DBD0A1ED19F1000CD7814 /* EditInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082DBD091ED19F1000CD7814 /* EditInfoController.m */; };
+		082DBD0D1ED1DCE300CD7814 /* HistoryPlacesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082DBD0C1ED1DCE300CD7814 /* HistoryPlacesController.m */; };
+		082DBD121ED1E53800CD7814 /* PlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 082DBD111ED1E53800CD7814 /* PlaceCell.m */; };
+		082DBD151ED1F2F800CD7814 /* OrdersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082DBD141ED1F2F800CD7814 /* OrdersController.m */; };
+		082DBD181ED1F4AE00CD7814 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 082DBD171ED1F4AE00CD7814 /* OrderCell.m */; };
+		082DBD1A1ED1F6A000CD7814 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 082DBD191ED1F69500CD7814 /* iconfont.ttf */; };
+		082DBD1D1ED1FE0A00CD7814 /* PointsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082DBD1C1ED1FE0A00CD7814 /* PointsController.m */; };
 		08339E151E7560BA005DABBA /* DrivingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08339E141E7560BA005DABBA /* DrivingCollectionViewCell.m */; };
 		08A0C43A1EB5A1000082C079 /* DEPOIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A0C4391EB5A1000082C079 /* DEPOIViewController.m */; };
 		08A0C43D1EB5A9200082C079 /* DEPOICell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A0C43C1EB5A9200082C079 /* DEPOICell.m */; };
@@ -15,7 +23,6 @@
 		08A13D3D1EA3AE650054C8C4 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A13D3C1EA3AE650054C8C4 /* InfoCell.m */; };
 		08A13D401EA3B0490054C8C4 /* InfoDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A13D3F1EA3B0490054C8C4 /* InfoDetailController.m */; };
 		08A13D431EA3B1D10054C8C4 /* InfoHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A13D421EA3B1D10054C8C4 /* InfoHeadCell.m */; };
-		08A45B6C1ECDBD6200DC8E8E /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08A45B6B1ECDBA4E00DC8E8E /* iconfont.ttf */; };
 		08A45B6F1ECDC1A400DC8E8E /* DateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A45B6E1ECDC1A400DC8E8E /* DateController.m */; };
 		08A9F9341EB3AC3A0039E381 /* AffairListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A9F9331EB3AC3A0039E381 /* AffairListCell.m */; };
 		08FC692B1E7418CA00D79F18 /* DERegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FC692A1E7418CA00D79F18 /* DERegisterViewController.m */; };
@@ -54,6 +61,21 @@
 
 /* Begin PBXFileReference section */
 		07E84A4D0C8B24972A963A8B /* Pods-DriverEpochUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriverEpochUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriverEpochUITests/Pods-DriverEpochUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		08028B8A1ED0437D0060A7F1 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		08028B8B1ED0437D0060A7F1 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		082DBD081ED19F1000CD7814 /* EditInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInfoController.h; sourceTree = "<group>"; };
+		082DBD091ED19F1000CD7814 /* EditInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditInfoController.m; sourceTree = "<group>"; };
+		082DBD0B1ED1DCE300CD7814 /* HistoryPlacesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryPlacesController.h; sourceTree = "<group>"; };
+		082DBD0C1ED1DCE300CD7814 /* HistoryPlacesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryPlacesController.m; sourceTree = "<group>"; };
+		082DBD101ED1E53800CD7814 /* PlaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceCell.h; sourceTree = "<group>"; };
+		082DBD111ED1E53800CD7814 /* PlaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceCell.m; sourceTree = "<group>"; };
+		082DBD131ED1F2F800CD7814 /* OrdersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersController.h; sourceTree = "<group>"; };
+		082DBD141ED1F2F800CD7814 /* OrdersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersController.m; sourceTree = "<group>"; };
+		082DBD161ED1F4AE00CD7814 /* OrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderCell.h; sourceTree = "<group>"; };
+		082DBD171ED1F4AE00CD7814 /* OrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderCell.m; sourceTree = "<group>"; };
+		082DBD191ED1F69500CD7814 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		082DBD1B1ED1FE0A00CD7814 /* PointsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointsController.h; sourceTree = "<group>"; };
+		082DBD1C1ED1FE0A00CD7814 /* PointsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointsController.m; sourceTree = "<group>"; };
 		08339E131E7560BA005DABBA /* DrivingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrivingCollectionViewCell.h; sourceTree = "<group>"; };
 		08339E141E7560BA005DABBA /* DrivingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrivingCollectionViewCell.m; sourceTree = "<group>"; };
 		08A0C4381EB5A1000082C079 /* DEPOIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEPOIViewController.h; sourceTree = "<group>"; };
@@ -70,7 +92,6 @@
 		08A13D3F1EA3B0490054C8C4 /* InfoDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoDetailController.m; sourceTree = "<group>"; };
 		08A13D411EA3B1D10054C8C4 /* InfoHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoHeadCell.h; sourceTree = "<group>"; };
 		08A13D421EA3B1D10054C8C4 /* InfoHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoHeadCell.m; sourceTree = "<group>"; };
-		08A45B6B1ECDBA4E00DC8E8E /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		08A45B6D1ECDC1A400DC8E8E /* DateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateController.h; sourceTree = "<group>"; };
 		08A45B6E1ECDC1A400DC8E8E /* DateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateController.m; sourceTree = "<group>"; };
 		08A9F9321EB3AC3A0039E381 /* AffairListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AffairListCell.h; sourceTree = "<group>"; };
@@ -197,7 +218,7 @@
 		4E10ABBA1E71339F00BCF21B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				08A45B6B1ECDBA4E00DC8E8E /* iconfont.ttf */,
+				082DBD191ED1F69500CD7814 /* iconfont.ttf */,
 				4E10ABBB1E71339F00BCF21B /* main.m */,
 				4E10AC041E714FA700BCF21B /* PrefixHeader.pch */,
 			);
@@ -266,6 +287,20 @@
 				4E10AC021E71459900BCF21B /* MeViewController.m */,
 				08A9F9321EB3AC3A0039E381 /* AffairListCell.h */,
 				08A9F9331EB3AC3A0039E381 /* AffairListCell.m */,
+				08028B8A1ED0437D0060A7F1 /* UserViewController.h */,
+				08028B8B1ED0437D0060A7F1 /* UserViewController.m */,
+				082DBD081ED19F1000CD7814 /* EditInfoController.h */,
+				082DBD091ED19F1000CD7814 /* EditInfoController.m */,
+				082DBD0B1ED1DCE300CD7814 /* HistoryPlacesController.h */,
+				082DBD0C1ED1DCE300CD7814 /* HistoryPlacesController.m */,
+				082DBD101ED1E53800CD7814 /* PlaceCell.h */,
+				082DBD111ED1E53800CD7814 /* PlaceCell.m */,
+				082DBD131ED1F2F800CD7814 /* OrdersController.h */,
+				082DBD141ED1F2F800CD7814 /* OrdersController.m */,
+				082DBD161ED1F4AE00CD7814 /* OrderCell.h */,
+				082DBD171ED1F4AE00CD7814 /* OrderCell.m */,
+				082DBD1B1ED1FE0A00CD7814 /* PointsController.h */,
+				082DBD1C1ED1FE0A00CD7814 /* PointsController.m */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -401,7 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08A45B6C1ECDBD6200DC8E8E /* iconfont.ttf in Resources */,
+				082DBD1A1ED1F6A000CD7814 /* iconfont.ttf in Resources */,
 				4E10ABCA1E71339F00BCF21B /* LaunchScreen.storyboard in Resources */,
 				4E10ABC71E71339F00BCF21B /* Assets.xcassets in Resources */,
 			);
@@ -568,9 +603,12 @@
 			files = (
 				08FC692B1E7418CA00D79F18 /* DERegisterViewController.m in Sources */,
 				4E10ABF31E713E7300BCF21B /* DENavigationController.m in Sources */,
+				082DBD181ED1F4AE00CD7814 /* OrderCell.m in Sources */,
 				4E10ABBF1E71339F00BCF21B /* AppDelegate.m in Sources */,
 				4E10ABEF1E713DE700BCF21B /* DETabBarController.m in Sources */,
+				082DBD1D1ED1FE0A00CD7814 /* PointsController.m in Sources */,
 				4E10ABF61E7143C200BCF21B /* DEViewController.m in Sources */,
+				082DBD121ED1E53800CD7814 /* PlaceCell.m in Sources */,
 				08A13D3D1EA3AE650054C8C4 /* InfoCell.m in Sources */,
 				08A9F9341EB3AC3A0039E381 /* AffairListCell.m in Sources */,
 				4E10ABFD1E71457C00BCF21B /* DrivingViewController.m in Sources */,
@@ -579,8 +617,11 @@
 				08A0C43A1EB5A1000082C079 /* DEPOIViewController.m in Sources */,
 				08FC692E1E7418D800D79F18 /* DELoginViewController.m in Sources */,
 				08A0C4471EB65AB60082C079 /* NaviController.m in Sources */,
+				082DBD0A1ED19F1000CD7814 /* EditInfoController.m in Sources */,
 				4E10AC031E71459900BCF21B /* MeViewController.m in Sources */,
 				08339E151E7560BA005DABBA /* DrivingCollectionViewCell.m in Sources */,
+				082DBD0D1ED1DCE300CD7814 /* HistoryPlacesController.m in Sources */,
+				08028B8C1ED0437D0060A7F1 /* UserViewController.m in Sources */,
 				4E10ABBC1E71339F00BCF21B /* main.m in Sources */,
 				4E10AC071E71569400BCF21B /* DrivingTopView.m in Sources */,
 				4E10AC0A1E724CD900BCF21B /* LocationViewController.m in Sources */,
@@ -588,6 +629,7 @@
 				08A45B6F1ECDC1A400DC8E8E /* DateController.m in Sources */,
 				08A0C4441EB61D060082C079 /* WeatherController.m in Sources */,
 				08A13D401EA3B0490054C8C4 /* InfoDetailController.m in Sources */,
+				082DBD151ED1F2F800CD7814 /* OrdersController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,6 +781,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "http---halohily.com.DriverEpoch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -755,6 +798,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "http---halohily.com.DriverEpoch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};

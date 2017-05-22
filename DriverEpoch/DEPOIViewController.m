@@ -9,6 +9,8 @@
 #import "DEPOIViewController.h"
 #import "DEPOICell.h"
 #import "NaviController.h"
+#import "DateController.h"
+
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AMapNaviKit/AMapNaviKit.h>
 
@@ -148,10 +150,12 @@
     cell.name.text = self.response.pois[indexPath.row].name;
     cell.location.text = self.response.pois[indexPath.row].address;
     
-    if (indexPath.row == 0){
+    if (indexPath.row == 0 && self.canDate){
         [cell.contentView addSubview:cell.datingBtn];
     }
-    
+    else{
+        [cell.datingBtn removeFromSuperview];
+    }
     CGFloat distance = self.response.pois[indexPath.row].distance;
     if (distance/1000 >= 1){
         cell.distance.text = [NSString stringWithFormat:@"%.1f公里",distance/1000];
@@ -163,6 +167,7 @@
     cell.index = indexPath.row;
     return cell;
 }
+
 //判断滑动手势方向，决定tableview的frame改变
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
@@ -272,6 +277,15 @@
 - (void)date
 {
     NSLog(@"1111");
+    DateController *dateVC = [[DateController alloc] init];
+    NSMutableDictionary *tempDic = [[NSMutableDictionary alloc] init];
+    [tempDic setObject:self.titleStr forKey:@"headStr"];
+    [tempDic setObject:self.response.pois[0].name forKey:@"name"];
+    [tempDic setObject:self.response.pois[0].address forKey:@"address"];
+    [tempDic setObject:self.response.pois[0].uid forKey:@"uid"];
+    dateVC.vcData = tempDic;
+    [self.navigationController pushViewController:dateVC animated:YES];
+    
 }
 - (void)viewWillAppear:(BOOL)animated
 {

@@ -77,7 +77,7 @@
     self.weatherLabel = weather;
 
     UIButton *weatherInfo = [[UIButton alloc] initWithFrame:CGRectMake(DEAppWidth * 0.85, 40, 26, 26)];
-    [weatherInfo setTitle:@"\U0000e65c" forState:UIControlStateNormal];
+    [weatherInfo setTitle:@"\U0000e605" forState:UIControlStateNormal];
     weatherInfo.titleLabel.font = [UIFont fontWithName:@"iconfont" size:26.0];
     [weatherInfo addTarget:self action:@selector(weatherInfoClick) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:weatherInfo];

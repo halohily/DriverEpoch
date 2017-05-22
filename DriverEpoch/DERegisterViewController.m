@@ -105,24 +105,6 @@
     [self.view addSubview:BackToLogin];
 }
 
-- (IBAction)ClickUser:(id)sender
-{
-    [User setBackgroundColor:[UIColor colorWithRed:166/255.0 green:166/255.0 blue:166/255.0 alpha:1]];
-    [User setTitleColor:[UIColor colorWithRed:242/255.0 green:242/255.0 blue:244/255.0 alpha:1]forState:UIControlStateNormal];
-    [Designer setBackgroundColor:[UIColor colorWithRed:242/255.0 green:242/255.0 blue:244/255.0 alpha:1]];
-    [Designer setTitleColor:[UIColor colorWithRed:166/255.0 green:166/255.0 blue:166/255.0 alpha:1] forState:UIControlStateNormal];
-    self.mytype = @"user";
-}
-
-- (IBAction)ClickDesigner:(id)sender
-{
-    
-    [User setBackgroundColor:[UIColor colorWithRed:242/255.0 green:242/255.0 blue:244/255.0 alpha:1]];
-    [User setTitleColor:[UIColor colorWithRed:166/255.0 green:166/255.0 blue:166/255.0 alpha:1] forState:UIControlStateNormal];
-    [Designer setBackgroundColor:[UIColor colorWithRed:166/255.0 green:166/255.0 blue:166/255.0 alpha:1]];
-    [Designer setTitleColor:[UIColor colorWithRed:242/255.0 green:242/255.0 blue:244/255.0 alpha:1] forState:UIControlStateNormal];
-    self.mytype = @"designer";
-}
 
 - (IBAction)backtoLoginViewController:(id)sender
 {
@@ -208,6 +190,8 @@
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeText;
         hud.label.text = @"请输入6位以上用户名";
+        [hud hideAnimated:YES afterDelay:1];
+    
         
     }
     else if ([ps  isEqual: @""] || ps == nil || ps.length < 6) {
@@ -230,58 +214,50 @@
         hud.label.text = @"加载中";
         [hud hideAnimated:YES afterDelay:5];
         
-//        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//        NSDictionary *parameters = @{@"if":@"Register",
-//                                     @"password":ps,
-//                                     @"type":self.mytype,
-//                                     @"username":user,};
-//        NSLog(@"%@",parameters);
-//        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json",@"text/plain",@"text/html", @"text/javascript", nil];
-//        [manager POST:SERVER_IP parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            NSLog(@"json  %@",responseObject);
-//            NSNumber *code = [responseObject objectForKey:@"code"];
-//            if (code.intValue == 1)
-//            {
-//                [MBProgressHUD hideHUDForView:self.view animated:YES];
-//                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//                hud.mode = MBProgressHUDModeText;
-//                hud.labelText = @"注册成功，快去登录吧";
-//                [hud hide:YES afterDelay:1];
-//                //[self.navigationController popViewControllerAnimated:YES];
-//                confirmpassword.text = nil;
-//                username.text = nil;
-//                password.text = nil;
-//                [username resignFirstResponder];
-//                [password resignFirstResponder];
-//                [confirmpassword resignFirstResponder];
-//            }
-//            else{
-//                [MBProgressHUD hideHUDForView:self.view animated:YES];
-//                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//                hud.mode = MBProgressHUDModeText;
-//                hud.labelText = @"此账户已注册，换个账户吧";
-//                [hud hide:YES afterDelay:1];
-//                confirmpassword.text = nil;
-//                username.text = nil;
-//                password.text = nil;
-//                [username resignFirstResponder];
-//                [password resignFirstResponder];
-//                [confirmpassword resignFirstResponder];
-//            }
-//            
-//            
-//            
-//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//            NSLog(@"Error: %@", error);
-//            [MBProgressHUD hideHUDForView:self.view animated:YES];
-//            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//            hud.mode = MBProgressHUDModeText;
-//            hud.labelText = @"网络错误！";
-//            [hud hide:YES afterDelay:1];
-//            
-//        }];
-        
+        NSDictionary *parameters = @{@"if": @"Register", @"username": user, @"password":ps};
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        [manager POST:SERVER_ADDRESS parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        }
+             success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                 NSLog(@"%@", responseObject);
+                 NSNumber *code = [responseObject objectForKey:@"code"];
+                 if (code.intValue == 1)
+                {
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                    hud.mode = MBProgressHUDModeText;
+                    hud.label.text = @"注册成功，快去登录吧";
+                    [hud hideAnimated:YES afterDelay:1.0];
+                    [self.navigationController popViewControllerAnimated:YES];
+                    confirmpassword.text = nil;
+                    username.text = nil;
+                    password.text = nil;
+                    [username resignFirstResponder];
+                    [password resignFirstResponder];
+                    [confirmpassword resignFirstResponder];
+                }
+                else{
+                    
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                    hud.mode = MBProgressHUDModeText;
+                    hud.label.text = @"此账户已注册，换个账户吧";
+                    [hud hideAnimated:YES afterDelay:1];
+                    confirmpassword.text = nil;
+                    username.text = nil;
+                    password.text = nil;
+                    [username resignFirstResponder];
+                    [password resignFirstResponder];
+                    [confirmpassword resignFirstResponder];
+                }
+
+             }
+             failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull   error) {
+                 
+                 NSLog(@"%@",error);  //这里打印错误信息
+                 
+             }];        
     }
     
 }

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface DateController : UIViewController
-
+@property (nonatomic, strong) NSMutableDictionary *vcData;
 @end

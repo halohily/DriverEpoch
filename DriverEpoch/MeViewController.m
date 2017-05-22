@@ -8,6 +8,12 @@
 
 #import "MeViewController.h"
 #import "AffairListCell.h"
+#import "UserViewController.h"
+#import "DELoginViewController.h"
+#import "AppDelegate.h"
+#import "HistoryPlacesController.h"
+#import "OrdersController.h"
+#import "PointsController.h"
 @interface MeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UIImageView *carImage;
@@ -29,7 +35,7 @@
 
 - (void)setupData
 {
-    NSArray *array = @[@{@"affair": @"车辆信息", @"icon": @"\U0000e89e", @"holder": @""}, @{@"affair": @"历史事件", @"icon": @"\U0000e61a", @"holder": @"5"}, @{@"affair": @"历史足迹", @"icon": @"\U0000e8d0", @"holder": @"12"}, @{@"affair": @"我的收藏", @"icon": @"\U0000e86e", @"holder": @"6"}];
+    NSArray *array = @[@{@"affair": @"个人信息", @"icon": @"\U0000e89e", @"holder": @""}, @{@"affair": @"历史预定", @"icon": @"\U0000e61a", @"holder": @""}, @{@"affair": @"历史足迹", @"icon": @"\U0000e8d0", @"holder": @""}, @{@"affair": @"我的积分", @"icon": @"\U0000e86e", @"holder": @""}];
     self.affairArr = array;
     
     NSArray *temp = @[@{@"affair": @"清除缓存", @"icon": @"\U0000e8c1", @"holder": @"200K"}, @{@"affair": @"退出登录", @"icon": @"\U0000e603", @"holder": @""}];
@@ -50,7 +56,7 @@
     UILabel *nickname = [[UILabel alloc] initWithFrame:CGRectMake(0, 220, DEAppWidth, 20)];
     nickname.font = [UIFont systemFontOfSize:15.0];
     nickname.textColor = [UIColor blackColor];
-    nickname.text = @"halo";
+    nickname.text = @"Enjoy Driving";
     nickname.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:nickname];
     self.nickname = nickname;
@@ -106,6 +112,55 @@
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0 && indexPath.row == 0){
+        UserViewController *userVC = [[UserViewController alloc] init];
+        [self.navigationController pushViewController:userVC animated:YES];
+    }
+    if (indexPath.section == 1 && indexPath.row == 1){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确认退出登录?" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            NSLog(@"点击取消");
+            [alert dismissViewControllerAnimated:YES completion:nil];
+            
+        }]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSLog(@"点击确认");
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"username"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"nickname"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"id"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"car"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            DELoginViewController *loginVC = [[DELoginViewController alloc] init];
+            [self presentViewController:loginVC animated:YES completion:^{
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    // 耗时的操作
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        // 更新界面
+                        AppDelegate * appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+                        appDelegate.tabbarVC.selectedIndex = 0;
+                    });
+                });
+            }];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+
+    }
+    if (indexPath.section == 0 && indexPath.row == 2){
+        HistoryPlacesController *historyVC = [[HistoryPlacesController alloc] init];
+        [self.navigationController pushViewController:historyVC animated:YES];
+    }
+    if (indexPath.section == 0 && indexPath.row == 1){
+        OrdersController *orderVC = [[OrdersController alloc] init];
+        [self.navigationController pushViewController:orderVC animated:YES];
+    }
+    if (indexPath.section == 0 && indexPath.row == 3){
+        PointsController *pointsVC = [[PointsController alloc] init];
+        [self.navigationController pushViewController:pointsVC animated:YES];
+    }
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
