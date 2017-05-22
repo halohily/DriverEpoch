@@ -5,7 +5,7 @@
 - 后端代码比较简单，想要自己尝试开发`API`的iOS开发者可以参考。
 
 首先上整体的效果图：
-![show.gif](http://upload-images.jianshu.io/upload_images/3587644-885a443c5380c5b9.gif?imageMogr2/auto-orient/strip)
+![show.gif](http://omhjzsh8e.bkt.clouddn.com/show.gif)
 
 *在POI检索结果页面，地图控件显示为空白，是因为模拟器运行的原因，真机效果良好*
 
