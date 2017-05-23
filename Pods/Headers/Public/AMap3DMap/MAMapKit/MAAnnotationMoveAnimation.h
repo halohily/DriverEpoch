@@ -1,0 +1,1 @@
+../../../../AMap3DMap/MAMapKit.framework/Headers/MAAnnotationMoveAnimation.h
