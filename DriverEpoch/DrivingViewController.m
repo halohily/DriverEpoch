@@ -356,7 +356,7 @@ AMapSearchDelegate>
 {
     NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"id"];
     
-    if (user_id && ![self.locationStr isEqualToString:@""]){
+    if (user_id && self.locationStr && ![self.locationStr isEqualToString:@""]){
         
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             NSString *latitude = [NSString stringWithFormat:@"%f", self.nowCoordinate.latitude];

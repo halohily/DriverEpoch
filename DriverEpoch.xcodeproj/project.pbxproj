@@ -781,7 +781,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = V2GC55R3DL;
-				GCC_PREFIX_HEADER = /Users/LY/Desktop/DriverEpoch/DriverEpoch/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DriverEpoch/PrefixHeader.pch";
 				INFOPLIST_FILE = DriverEpoch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -798,7 +798,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = V2GC55R3DL;
-				GCC_PREFIX_HEADER = /Users/LY/Desktop/DriverEpoch/DriverEpoch/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DriverEpoch/PrefixHeader.pch";
 				INFOPLIST_FILE = DriverEpoch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
